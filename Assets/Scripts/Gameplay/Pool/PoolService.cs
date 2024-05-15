@@ -15,7 +15,12 @@ namespace Gameplay
             _poolObjectsConfig.Init();
         }
 
-        public TPoolObject Spawn<TPoolObject>(PoolObjectId poolObjectId, Transform parent) where TPoolObject : PoolObject
+        public TPoolObject Spawn<TPoolObject>(
+            PoolObjectId poolObjectId, 
+            Vector3 position, 
+            Quaternion rotation, 
+            Transform parent) 
+            where TPoolObject : PoolObject
         {
             if (!_poolObjectsConfig.PoolObjectsByIds.TryGetValue(poolObjectId, out var poolObjectPrefab))
             {
@@ -29,7 +34,7 @@ namespace Gameplay
                 return (TPoolObject) cachedPoolObject;
             }
             
-            var poolObject = Instantiate(poolObjectPrefab, parent);
+            var poolObject = Instantiate(poolObjectPrefab, position, rotation, parent);
             poolObject.PoolObjectId = poolObjectId;
             poolObject.Reinitialize();
             

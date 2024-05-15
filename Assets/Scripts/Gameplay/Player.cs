@@ -23,7 +23,7 @@ namespace Gameplay
         private Vector2 _attractionVector;
         private Vector2 _lateralVector;
         private Vector2 _leapVector;
-        private float _lateralDelta = 1;
+        private float _leapDelta = 1;
         private bool _isTouching;
         
         private void Start()
@@ -48,12 +48,15 @@ namespace Gameplay
         {
             var direction = new Vector2(transform.position.x, transform.position.y).normalized;
             _leapVector = direction * _leapForce;
+
+            var sqrMagnitude = transform.position.sqrMagnitude / 300f;
+            Debug.Log(sqrMagnitude);
+            var distanceForce = Mathf.Clamp(sqrMagnitude, 1f, 5f);
+            var attractionVector = -direction * distanceForce * _attractionForce;
             
-            var attractionVector = -direction * _attractionForce;
+            _leapDelta += _attractionForce * Time.fixedDeltaTime;
             
-            _lateralDelta += _attractionForce * Time.fixedDeltaTime;
-            
-            _attractionVector = Vector2.Lerp(_leapVector, attractionVector, Mathf.Clamp01(_lateralDelta));
+            _attractionVector = Vector2.Lerp(_leapVector, attractionVector, Mathf.Clamp01(_leapDelta));
             Debug.DrawLine(transform.position, _attractionVector, Color.yellow);
         }
 
@@ -97,7 +100,7 @@ namespace Gameplay
                 PoolService.Instance.Despawn(poolObject);
             }
             
-            _lateralDelta = 0;
+            _leapDelta = 0;
         }
     }
 }
