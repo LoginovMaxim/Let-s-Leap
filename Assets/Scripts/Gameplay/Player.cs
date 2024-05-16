@@ -7,6 +7,7 @@ namespace Gameplay
     {
         [Header("Common")]
         [SerializeField] private float _sensitive;
+        [SerializeField] private AnimationCurve _stretchCurve;
         
         [Header("Attraction")]
         [SerializeField] private float _attractionForce;
@@ -34,6 +35,7 @@ namespace Gameplay
         private void Update()
         {
             _isTouching = Input.GetMouseButton(0);
+            UpdateStretch();
         }
 
         private void FixedUpdate()
@@ -86,6 +88,15 @@ namespace Gameplay
             var vectorToTarget = -transform.position;
             var angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
             _rigidbody.rotation = angle + 90;
+        }
+
+        private void UpdateStretch()
+        {
+            var localScale = transform.localScale;
+            var targetScaleY = _stretchCurve.Evaluate(Mathf.Clamp01(_leapDelta));
+            localScale.x = Mathf.Lerp(localScale.x, 1f / targetScaleY, 10f * Time.deltaTime);
+            localScale.y = Mathf.Lerp(localScale.y, targetScaleY, 10f * Time.deltaTime);
+            transform.localScale = localScale;
         }
 
         private void OnTriggerEnter2D(Collider2D other)
