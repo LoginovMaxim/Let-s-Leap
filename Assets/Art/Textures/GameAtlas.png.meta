@@ -236,6 +236,27 @@ TextureImporter:
       name: GameAtlas_4
       rect:
         serializedVersion: 2
+        x: 557
+        y: 890
+        width: 97
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9db2ab4c2c5882b45922125f3ef9cbc5
+      internalID: 1925835221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameAtlas_5
+      rect:
+        serializedVersion: 2
         x: 258
         y: 836
         width: 65
@@ -247,8 +268,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9db2ab4c2c5882b45922125f3ef9cbc5
-      internalID: 1925835221
+      spriteID: ff26e67e74705e649a470073cc22719d
+      internalID: -1038927643
       vertices: []
       indices: 
       edges: []
@@ -269,6 +290,7 @@ TextureImporter:
       GameAtlas_2: -517803209
       GameAtlas_3: -859986332
       GameAtlas_4: 1925835221
+      GameAtlas_5: -1038927643
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

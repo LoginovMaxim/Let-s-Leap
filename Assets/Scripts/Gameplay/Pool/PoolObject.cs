@@ -4,7 +4,7 @@ namespace Gameplay
 {
     public abstract class PoolObject : MonoBehaviour
     {
-        public PoolObjectId PoolObjectId { get; set; }
+        public abstract PoolObjectId PoolObjectId { get; }
         public bool IsActive => gameObject.activeSelf;
         
         public virtual void Reinitialize()

@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8231261572193247087}
-  - component: {fileID: 6223970043113480784}
+  - component: {fileID: 4098615557108350135}
   - component: {fileID: 4743293564209275567}
   m_Layer: 7
-  m_Name: 'BlackSide '
+  m_Name: WhiteSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2542750957239493888}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6223970043113480784
+--- !u!114 &4098615557108350135
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,7 +42,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 545906129828438065}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 373e40fb7fdd4f18b519d27d72f87fd4, type: 3}
+  m_Script: {fileID: 11500000, guid: 0af6837648f942f09462eaab6d60d599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!60 &4743293564209275567
@@ -89,12 +89,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.32, y: 0}
-      - {x: 0.32, y: 0.5}
-      - {x: 0.2, y: 0.64}
-      - {x: -0.2, y: 0.64}
-      - {x: -0.32, y: 0.5}
-      - {x: -0.32, y: 0}
+    - - {x: 0.48, y: 0}
+      - {x: -0.48, y: 0}
+      - {x: -0.384, y: -0.3}
+      - {x: -0.192, y: -0.44}
+      - {x: 0, y: -0.48}
+      - {x: 0.192, y: -0.44}
+      - {x: 0.384, y: -0.3}
   m_UseDelaunayMesh: 0
 --- !u!1 &5042714087061770796
 GameObject:
@@ -106,9 +107,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2542750957239493888}
   - component: {fileID: 1865249797152095852}
-  - component: {fileID: 2315694686764687056}
+  - component: {fileID: 6923401653028660529}
+  - component: {fileID: 123535291100648839}
   m_Layer: 0
-  m_Name: DoubleBlock
+  m_Name: CircleComet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,7 +174,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -517803209, guid: 9e1cc725056d46a4185a3bcf42126f21, type: 3}
+  m_Sprite: {fileID: 1925835221, guid: 9e1cc725056d46a4185a3bcf42126f21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -183,7 +185,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2315694686764687056
+--- !u!50 &6923401653028660529
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5042714087061770796}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &123535291100648839
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,9 +221,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5042714087061770796}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1517cbd7f6347878eb4fbb3150b99ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 2543291344b84827b53d716c925afff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 6923401653028660529}
+  _points: 1
 --- !u!1 &6530568814486672802
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,10 +235,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2700097014048032703}
-  - component: {fileID: 8510536771456257858}
+  - component: {fileID: 1655597360152381951}
   - component: {fileID: 5007533528169834629}
   m_Layer: 6
-  m_Name: WhiteSide
+  m_Name: BlackSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,7 +259,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2542750957239493888}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8510536771456257858
+--- !u!114 &1655597360152381951
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,7 +268,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6530568814486672802}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0af6837648f942f09462eaab6d60d599, type: 3}
+  m_Script: {fileID: 11500000, guid: 373e40fb7fdd4f18b519d27d72f87fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!60 &5007533528169834629
@@ -284,10 +315,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.32, y: 0}
-      - {x: 0.32, y: -0.5}
-      - {x: 0.2, y: -0.64}
-      - {x: -0.2, y: -0.64}
-      - {x: -0.32, y: -0.5}
-      - {x: -0.32, y: 0}
+    - - {x: 0.48, y: 0}
+      - {x: -0.48, y: 0}
+      - {x: -0.384, y: 0.3}
+      - {x: -0.192, y: 0.44}
+      - {x: 0, y: 0.48}
+      - {x: 0.192, y: 0.44}
+      - {x: 0.384, y: 0.3}
   m_UseDelaunayMesh: 0

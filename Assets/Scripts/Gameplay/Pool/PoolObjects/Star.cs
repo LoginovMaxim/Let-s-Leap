@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Gameplay
 {
@@ -12,8 +11,7 @@ namespace Gameplay
                 return;
             }
             
-            Debug.Log($"GameOver");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GameManager.Instance.GameOver();
         }
     }
 }

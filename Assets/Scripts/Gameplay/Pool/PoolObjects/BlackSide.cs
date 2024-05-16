@@ -1,15 +1,10 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-
-namespace Gameplay
+﻿namespace Gameplay
 {
-    public class BlackSide : MonoBehaviour
+    public class BlackSide : CometSide
     {
-        private void OnTriggerEnter2D(Collider2D other)
+        protected override void OnPlayerCollided()
         {
-            Debug.Log($"GameOver");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GameManager.Instance.GameOver();
         }
     }
 }

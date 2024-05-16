@@ -199,9 +199,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6692592988770139149}
   - component: {fileID: 1006619790297219826}
-  - component: {fileID: -1984159203892151236}
   m_Layer: 0
-  m_Name: BlockSpike
+  m_Name: BlockSpikeComet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -276,15 +275,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-1984159203892151236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1516072561769416358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1517cbd7f6347878eb4fbb3150b99ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

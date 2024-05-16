@@ -3,7 +3,8 @@
     public enum PoolObjectId
     {
         Circle,
-        DoubleBlock,
-        BlockSpike,
+        CircleComet,
+        BlockComet,
+        BlockSpikeComet,
     }
 }

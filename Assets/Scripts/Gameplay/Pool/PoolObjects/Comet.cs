@@ -1,6 +1,6 @@
 ﻿namespace Gameplay
 {
-    public class Comet : PoolObject 
+    public abstract class Comet : GameplayPoolObject 
     {
     }
 }

@@ -15,3 +15,5 @@ MonoBehaviour:
   <PoolObjectData>k__BackingField:
   - PoolObjectId: 0
     PoolObject: {fileID: -999346418204058004, guid: f21d7c1101652a24ea3000c38917ff27, type: 3}
+  - PoolObjectId: 1
+    PoolObject: {fileID: 123535291100648839, guid: f88b67ccf1a5c864198cfcecbd8b582b, type: 3}

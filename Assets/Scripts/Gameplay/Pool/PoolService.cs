@@ -35,7 +35,6 @@ namespace Gameplay
             }
             
             var poolObject = Instantiate(poolObjectPrefab, position, rotation, parent);
-            poolObject.PoolObjectId = poolObjectId;
             poolObject.Reinitialize();
             
             return (TPoolObject) poolObject;
