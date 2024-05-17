@@ -13,14 +13,28 @@ namespace Gameplay
         [SerializeField] protected float _spawnRangeOut;
 
         private float _spawnTime;
+        private bool _isPause = true;
+        
+        public abstract SpawnerId SpawnerId { get; }
 
-        private void Start()
+        public virtual void Pause()
         {
+            _isPause = true;
+        }
+
+        public virtual void UnPause()
+        {
+            _isPause = false;
             _spawnTime = Time.time + _spawnPeriod;
         }
 
         private void Update()
         {
+            if (_isPause)
+            {
+                return;
+            }
+            
             if (_spawnTime > Time.time)
             {
                 return;

@@ -5,6 +5,8 @@ namespace Gameplay
 {
     public sealed class CircleSpawner : Spawner
     {
+        public override SpawnerId SpawnerId => SpawnerId.Circle;
+
         protected override void Spawn()
         {
             var spawnDistance = Random.Range(_spawnRangeIn, _spawnRangeOut);

@@ -4,6 +4,8 @@ namespace Gameplay
 {
     public sealed class CircleCometSpawner : Spawner
     {
+        public override SpawnerId SpawnerId => SpawnerId.CircleComet;
+        
         protected override void Spawn()
         {
             var spawnDistance = Random.Range(_spawnRangeIn, _spawnRangeOut);
