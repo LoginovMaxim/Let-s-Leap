@@ -1,3 +1,4 @@
+using LetsLeap.Game;
 using UnityEngine;
 
 namespace Gameplay
@@ -5,6 +6,10 @@ namespace Gameplay
     [RequireComponent(typeof(Rigidbody2D))]
     public sealed class Player : MonoBehaviour
     {
+        [Header("Skin")] 
+        [SerializeField] private SkinsConfig _skinsConfig;
+        [SerializeField] private SpriteRenderer _spriteRenderer;
+        
         [Header("Common")]
         [SerializeField] private float _sensitive;
         [SerializeField] private AnimationCurve _stretchCurve;
@@ -33,6 +38,16 @@ namespace Gameplay
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _whiteMask = LayerMask.GetMask("White");
+            
+            foreach (var skinData in _skinsConfig.SkinData)
+            {
+                if (!skinData.IsSelected)
+                {
+                    continue;
+                }
+
+                _spriteRenderer.sprite = skinData.Icon;
+            }
         }
 
         private void Update()
