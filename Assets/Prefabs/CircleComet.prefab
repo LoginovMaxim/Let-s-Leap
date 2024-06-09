@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8231261572193247087}
   - component: {fileID: 4098615557108350135}
   - component: {fileID: 4743293564209275567}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: WhiteSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 2542750957239493888}
   - component: {fileID: 1865249797152095852}
   - component: {fileID: 6923401653028660529}
-  - component: {fileID: 123535291100648839}
+  - component: {fileID: 7005135568974001493}
   m_Layer: 0
   m_Name: CircleComet
   m_TagString: Untagged
@@ -174,12 +174,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1925835221, guid: 9e1cc725056d46a4185a3bcf42126f21, type: 3}
+  m_Sprite: {fileID: -1038927643, guid: 9e1cc725056d46a4185a3bcf42126f21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.65, y: 1.29}
+  m_Size: {x: 0.65, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -212,7 +212,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &123535291100648839
+--- !u!114 &7005135568974001493
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5042714087061770796}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2543291344b84827b53d716c925afff4, type: 3}
+  m_Script: {fileID: 11500000, guid: c1517cbd7f6347878eb4fbb3150b99ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 6923401653028660529}
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 2700097014048032703}
   - component: {fileID: 1655597360152381951}
   - component: {fileID: 5007533528169834629}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: BlackSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,8 +315,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.48, y: 0}
-      - {x: -0.48, y: 0}
+    - - {x: 0.43, y: 0.1}
+      - {x: -0.43, y: 0.1}
       - {x: -0.384, y: 0.3}
       - {x: -0.192, y: 0.44}
       - {x: 0, y: 0.48}

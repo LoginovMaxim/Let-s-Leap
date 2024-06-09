@@ -6,5 +6,10 @@
         {
             GameManager.Instance.GameOver();
         }
+
+        protected override void OnBorderCollided()
+        {
+            PoolService.Instance.Despawn(_comet);
+        }
     }
 }

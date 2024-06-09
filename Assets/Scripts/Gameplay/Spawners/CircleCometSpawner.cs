@@ -4,26 +4,33 @@ namespace Gameplay
 {
     public sealed class CircleCometSpawner : Spawner
     {
-        public override SpawnerId SpawnerId => SpawnerId.CircleComet;
-        
         protected override void Spawn()
         {
-            var spawnDistance = Random.Range(_spawnRangeIn, _spawnRangeOut);
-            var randomDirectionX = Random.Range(-1f, 1f);
-            var randomDirectionY = Random.Range(-1f, 1f);
-            var randomSpawnPosition = new Vector3(randomDirectionX, randomDirectionY, 0f).normalized * spawnDistance;
+            Vector3 randomSpawnPosition;
+            while (true)
+            {
+                var spawnDistance = Random.Range(_spawnCircleRange.x, _spawnCircleRange.y);
+                var randomDirectionX = Random.Range(-1f, 1f);
+                var randomDirectionY = Random.Range(-1f, 1f);
+                randomSpawnPosition = new Vector3(randomDirectionX, randomDirectionY, 0f).normalized * spawnDistance;
+
+                if ((GameManager.Instance.Player.transform.position - randomSpawnPosition).sqrMagnitude > 4f)
+                {
+                    break;
+                }
+            }
             
-            var circleComet = PoolService.Instance.Spawn<CircleComet>(
-                PoolObjectId.CircleComet, 
+            var gameplayPoolObject = PoolService.Instance.Spawn(
+                _prefab,
                 randomSpawnPosition, 
                 Quaternion.identity, 
                 transform);
-            
-            var vectorToTarget = -circleComet.transform.position;
-            var angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
-            
-            circleComet.SetRotation(angle + 90);
-            circleComet.SetSpeed(0f);
+
+            gameplayPoolObject.Init(
+                GetLinearSpeed(), 
+                GetOrbitSpeed(), 
+                GetRotation(randomSpawnPosition), 
+                GetScale());
         }
     }
 }

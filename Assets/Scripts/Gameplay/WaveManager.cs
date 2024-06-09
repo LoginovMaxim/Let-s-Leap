@@ -1,41 +1,36 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace Gameplay
 {
     public sealed class WaveManager : MonoBehaviour
     {
+        [SerializeField] private List<WaveData> _wavesData;
+        
         [Header("Configs")]
         [SerializeField] private GameplayConfig _gameplayConfig;
-        [SerializeField] private WavesConfig _wavesConfig;
 
         [Header("Visual")]
         [SerializeField] private SpriteRenderer _background;
         [SerializeField] private Camera _camera;
-
-        private List<Spawner> _spawners;
-        private Dictionary<SpawnerId, Spawner> _spawnersByIds;
         
         private float _waveChangeTime;
         private int _currentWaveNumber;
         
         private void Start()
         {
-            _spawners = FindObjectsByType<Spawner>(FindObjectsSortMode.None).ToList();
-            _spawnersByIds = new Dictionary<SpawnerId, Spawner>();
-            
-            foreach (var spawner in _spawners)
-            {
-                _spawnersByIds.Add(spawner.SpawnerId, spawner);
-            }
-            
             UpdateNextWaveTime();
+            
+            var waveData = _wavesData[_currentWaveNumber];
+            foreach (var spawner in waveData.Spawners)
+            {
+                spawner.UnPause();
+            }
         }
 
         private void Update()
         {
-            if (_currentWaveNumber == _wavesConfig.WavesData.Count - 1)
+            if (_currentWaveNumber == _wavesData.Count - 1)
             {
                 return;
             }
@@ -45,42 +40,38 @@ namespace Gameplay
                 return;
             }
 
-            RunCurrenWaveSpawners();
+            NextWave();
             UpdateNextWaveTime();
         }
 
-        private void RunCurrenWaveSpawners()
+        private void NextWave()
         {
             if (_currentWaveNumber > 0)
             {
-                var previousWaveData = _wavesConfig.WavesData[_currentWaveNumber];
-                foreach (var spawnerId in previousWaveData.SpawnerIds)
+                var previousWaveData = _wavesData[_currentWaveNumber];
+                foreach (var spawner in previousWaveData.Spawners)
                 {
-                    if (_spawnersByIds.TryGetValue(spawnerId, out var spawner))
-                    {
-                        spawner.Pause();
-                    }
+                    spawner.Pause();
                 }
             }
 
             _currentWaveNumber++;
             
-            var waveData = _wavesConfig.WavesData[_currentWaveNumber];
-            foreach (var spawnerId in waveData.SpawnerIds)
+            var waveData = _wavesData[_currentWaveNumber];
+            foreach (var spawner in waveData.Spawners)
             {
-                if (_spawnersByIds.TryGetValue(spawnerId, out var spawner))
-                {
-                    spawner.UnPause();
-                }
+                spawner.UnPause();
             }
 
             _background.color = waveData.BackgoundColor;
             _camera.backgroundColor = waveData.CameraBackgroundColor;
+
+            Hud.Instance.SplashWave();
         }
 
         private void UpdateNextWaveTime()
         {
-            _waveChangeTime = Time.time + _gameplayConfig.WaveDuration * _currentWaveNumber;
+            _waveChangeTime = Time.time + _gameplayConfig.WaveDuration * Mathf.Sqrt(_currentWaveNumber + 1);
         }
     }
 }

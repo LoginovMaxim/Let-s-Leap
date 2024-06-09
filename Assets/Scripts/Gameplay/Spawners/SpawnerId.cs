@@ -4,5 +4,6 @@ namespace Gameplay
     {
         Circle,
         CircleComet,
+        CircleCometStaticOrbit,
     }
 }

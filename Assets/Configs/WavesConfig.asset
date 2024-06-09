@@ -15,19 +15,20 @@ MonoBehaviour:
   <WavesData>k__BackingField:
   - BackgoundColor: {r: 1, g: 0.2509804, b: 0.2509804, a: 1}
     CameraBackgroundColor: {r: 0.19607845, g: 0.015686275, b: 0.015686275, a: 1}
-    SpawnerIds: 0000000001000000
-  - BackgoundColor: {r: 1, g: 1, b: 0.2, a: 1}
-    CameraBackgroundColor: {r: 0.19607845, g: 0.19607845, b: 0.003921569, a: 1}
-    SpawnerIds: 
+    Spawners:
+    - {fileID: 0}
+  - BackgoundColor: {r: 1, g: 1, b: 0, a: 1}
+    CameraBackgroundColor: {r: 0.19607845, g: 0.19607845, b: 0, a: 1}
+    Spawners: []
   - BackgoundColor: {r: 0.34117648, g: 1, b: 0.34117648, a: 1}
     CameraBackgroundColor: {r: 0.039215688, g: 0.19607845, b: 0.039215688, a: 1}
-    SpawnerIds: 
+    Spawners: []
   - BackgoundColor: {r: 0.2, g: 1, b: 1, a: 1}
     CameraBackgroundColor: {r: 0.003921569, g: 0.19607845, b: 0.19607845, a: 1}
-    SpawnerIds: 
+    Spawners: []
   - BackgoundColor: {r: 0.4509804, g: 0.4509804, b: 1, a: 1}
     CameraBackgroundColor: {r: 0.06666667, g: 0.06666667, b: 0.19607845, a: 1}
-    SpawnerIds: 
+    Spawners: []
   - BackgoundColor: {r: 1, g: 0.34117648, b: 1, a: 1}
     CameraBackgroundColor: {r: 0.19607845, g: 0.039215688, b: 0.19607845, a: 1}
-    SpawnerIds: 
+    Spawners: []

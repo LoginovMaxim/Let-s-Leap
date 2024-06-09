@@ -4,18 +4,15 @@ namespace Gameplay
 {
     public abstract class Spawner : MonoBehaviour
     {
-        [Header("Common")]
-        [SerializeField] protected GameplayConfig _gameplayConfig;
-        [SerializeField] protected Transform _spawnParent;
-        [SerializeField] protected float _spawnPeriod;
-        [SerializeField] protected float _spawnCount;
-        [SerializeField] protected float _spawnRangeIn;
-        [SerializeField] protected float _spawnRangeOut;
+        [Header("Spawner")]
+        [SerializeField] protected GameplayPoolObject _prefab;
+        [SerializeField] protected Vector2 _spawnCircleRange;
+        [SerializeField] protected Vector2 _linearSpeedRange;
+        [SerializeField] protected Vector2 _orbitSpeedRange;
+        [SerializeField] protected Vector2 _scaleRange;
 
-        private float _spawnTime;
-        private bool _isPause = true;
-        
-        public abstract SpawnerId SpawnerId { get; }
+        private Rigidbody2D _parentRigidbody;
+        protected bool _isPause = true;
 
         public virtual void Pause()
         {
@@ -25,27 +22,26 @@ namespace Gameplay
         public virtual void UnPause()
         {
             _isPause = false;
-            _spawnTime = Time.time + _spawnPeriod;
         }
 
-        private void Update()
+        protected float GetLinearSpeed()
         {
-            if (_isPause)
-            {
-                return;
-            }
-            
-            if (_spawnTime > Time.time)
-            {
-                return;
-            }
+            return Random.Range(_linearSpeedRange.x, _linearSpeedRange.y);
+        }
 
-            for (var i = 0; i < _spawnCount; i++)
-            {
-                Spawn();
-            }
-            
-            _spawnTime = Time.time + _spawnPeriod;
+        protected float GetOrbitSpeed()
+        {
+            return Random.Range(_orbitSpeedRange.x, _orbitSpeedRange.y);
+        }
+
+        protected float GetRotation(Vector2 position)
+        {
+            return Mathf.Atan2(position.y, position.x) * Mathf.Rad2Deg - 90;
+        }
+        
+        protected float GetScale()
+        {
+            return Random.Range(_scaleRange.x, _scaleRange.y);
         }
 
         protected abstract void Spawn();

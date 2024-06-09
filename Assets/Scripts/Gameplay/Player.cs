@@ -20,16 +20,19 @@ namespace Gameplay
         [SerializeField] private float _leapForce;
         
         private Rigidbody2D _rigidbody;
+        private LayerMask _whiteMask;
 
         private Vector2 _attractionVector;
         private Vector2 _lateralVector;
         private Vector2 _leapVector;
         private float _leapDelta = 1;
+        private int _positiveLeapsCount;
         private bool _isTouching;
         
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
+            _whiteMask = LayerMask.GetMask("White");
         }
 
         private void Update()
@@ -49,14 +52,18 @@ namespace Gameplay
         private void UpdateAttractionForce()
         {
             var direction = new Vector2(transform.position.x, transform.position.y).normalized;
-            _leapVector = direction * _leapForce;
+            _leapVector = direction * _leapForce * (0.8f + (_positiveLeapsCount / 5f));
 
             var sqrMagnitude = transform.position.sqrMagnitude / 300f;
-            Debug.Log(sqrMagnitude);
             var distanceForce = Mathf.Clamp(sqrMagnitude, 1f, 5f);
             var attractionVector = -direction * distanceForce * _attractionForce;
             
             _leapDelta += _attractionForce * Time.fixedDeltaTime;
+
+            if (_leapDelta >= 1f)
+            {
+                _positiveLeapsCount = 0;
+            }
             
             _attractionVector = Vector2.Lerp(_leapVector, attractionVector, Mathf.Clamp01(_leapDelta));
             Debug.DrawLine(transform.position, _attractionVector, Color.yellow);
@@ -101,7 +108,12 @@ namespace Gameplay
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.transform.gameObject.layer != 6)
+            if (other.gameObject.layer == 9)
+            {
+                PointsCounter.Instance.IncreaseMultiplier();
+            }
+            
+            if (other.gameObject.layer != 6)
             {
                 return;
             }
@@ -112,6 +124,7 @@ namespace Gameplay
             }
             
             _leapDelta = 0;
+            _positiveLeapsCount++;
         }
     }
 }

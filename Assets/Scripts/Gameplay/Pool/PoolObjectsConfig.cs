@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Gameplay.Extensions;
 using UnityEngine;
 
 namespace Gameplay
@@ -9,12 +10,20 @@ namespace Gameplay
     {
         [field: SerializeField] public List<PoolObjectData> PoolObjectData { get; private set; }
 
-        public IReadOnlyDictionary<PoolObjectId, PoolObject> PoolObjectsByIds => _poolObjectsByIds;
-        private Dictionary<PoolObjectId, PoolObject> _poolObjectsByIds;
+        public IReadOnlyDictionary<string, PoolObject> PoolObjectsByIds => _poolObjectsByIds;
+        private Dictionary<string, PoolObject> _poolObjectsByIds;
+
+        private void OnValidate()
+        {
+            foreach (var poolObjectData in PoolObjectData)
+            {
+                poolObjectData.PoolObjectId = poolObjectData.PoolObject.GetType().ToString().GetShortTypeName();
+            }
+        }
 
         public void Init()
         {
-            _poolObjectsByIds = new Dictionary<PoolObjectId, PoolObject>();
+            _poolObjectsByIds = new Dictionary<string, PoolObject>();
 
             foreach (var poolObjectData in PoolObjectData)
             {
@@ -24,9 +33,9 @@ namespace Gameplay
     }
 
     [Serializable]
-    public struct PoolObjectData
+    public class PoolObjectData
     {
-        public PoolObjectId PoolObjectId;
+        public string PoolObjectId;
         public PoolObject PoolObject;
     }
 }

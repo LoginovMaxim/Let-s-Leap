@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 7638210101870062837}
   - component: {fileID: 5563273805035442102}
   - component: {fileID: 3588181073153044772}
-  m_Layer: 0
+  - component: {fileID: 8268176143889756830}
+  - component: {fileID: 5097880891713859417}
+  m_Layer: 7
   m_Name: Star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,6 +123,46 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.96
+--- !u!50 &8268176143889756830
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2324300794875161053}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &5097880891713859417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2324300794875161053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84cf371cff484da6b671ddcaa36ce933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _multiplierText: {fileID: 6160614772426623220}
 --- !u!1 &2813909817566567802
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +175,7 @@ GameObject:
   - component: {fileID: 7255145449078408314}
   - component: {fileID: 4691040268060990497}
   - component: {fileID: 1965440083950378449}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +276,7 @@ GameObject:
   - component: {fileID: 5407696532829876349}
   - component: {fileID: 7561028473861120058}
   - component: {fileID: 6160614772426623220}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RoundsAmountText
   m_TagString: Untagged
   m_Icon: {fileID: 0}

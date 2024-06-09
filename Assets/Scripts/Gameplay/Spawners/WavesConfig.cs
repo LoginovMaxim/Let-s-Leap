@@ -15,6 +15,6 @@ namespace Gameplay
     {
         public Color BackgoundColor;
         public Color CameraBackgroundColor;
-        public List<SpawnerId> SpawnerIds;
+        public List<Spawner> Spawners;
     }
 }

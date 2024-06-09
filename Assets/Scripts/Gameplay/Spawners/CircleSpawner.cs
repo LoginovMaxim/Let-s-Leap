@@ -1,30 +1,30 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Gameplay
 {
+    [Serializable]
     public sealed class CircleSpawner : Spawner
     {
-        public override SpawnerId SpawnerId => SpawnerId.Circle;
-
         protected override void Spawn()
         {
-            var spawnDistance = Random.Range(_spawnRangeIn, _spawnRangeOut);
+            var spawnDistance = Random.Range(_spawnCircleRange.x, _spawnCircleRange.y);
             var randomDirectionX = Random.Range(-1f, 1f);
             var randomDirectionY = Random.Range(-1f, 1f);
             var randomSpawnPosition = new Vector3(randomDirectionX, randomDirectionY, 0f) * spawnDistance;
             
-            var circle = PoolService.Instance.Spawn<Circle>(
-                PoolObjectId.Circle, 
+            var gameplayPoolObject = PoolService.Instance.Spawn(
+                _prefab,
                 randomSpawnPosition, 
                 Quaternion.identity, 
-                _spawnParent);
-            
-            var vectorToTarget = -circle.transform.position;
-            var angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
-            
-            circle.SetRotation(angle + 90);
-            circle.SetSpeed(Random.Range(_gameplayConfig.CircleSpeedRange.x, _gameplayConfig.CircleSpeedRange.y));
+                transform);
+
+            gameplayPoolObject.Init(
+                GetLinearSpeed(), 
+                GetOrbitSpeed(), 
+                GetRotation(randomSpawnPosition), 
+                GetScale());
         }
     }
 }
