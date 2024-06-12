@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 6164951837662550194}
   m_Layer: 7
   m_Name: WhiteSide
-  m_TagString: Untagged
+  m_TagString: WhiteSide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 5007533528169834629}
   m_Layer: 7
   m_Name: BlackSide
-  m_TagString: Untagged
+  m_TagString: BlackSide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 6407486606553677965}
   m_Layer: 7
   m_Name: BlackSide
-  m_TagString: Untagged
+  m_TagString: BlackSide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -531,7 +531,7 @@ GameObject:
   - component: {fileID: 8566910348482563827}
   m_Layer: 7
   m_Name: WhiteSide
-  m_TagString: Untagged
+  m_TagString: WhiteSide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

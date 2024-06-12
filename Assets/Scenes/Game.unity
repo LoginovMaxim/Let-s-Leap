@@ -1078,7 +1078,8 @@ MonoBehaviour:
   _abilities:
   - {fileID: 318217632836493624, guid: 2f181202744c4114cadf963ed4ff2a23, type: 3}
   - {fileID: 9053845356323694189, guid: 2636205e634739e488eb2e9303ecba64, type: 3}
-  _spawnCircleRange: {x: 2, y: 6}
+  - {fileID: -1000341439009937353, guid: 14fe34eab5c8e164c99ccb461fb0a29d, type: 3}
+  _spawnCircleRange: {x: 3, y: 9}
   _spawnPeriodRange: {x: 6, y: 12}
   _spawnCountRange: {x: 1, y: 1}
 --- !u!4 &586149074

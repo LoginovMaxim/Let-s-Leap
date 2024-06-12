@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Gameplay.Abilities
+namespace Gameplay
 {
     public abstract class AbilityEffect : MonoBehaviour
     {

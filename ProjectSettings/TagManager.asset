@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - WhiteSide
+  - BlackSide
+  - Comet
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - Black
   - Border
   - RoundLine
-  - 
+  - Pulse
   - 
   - 
   - 

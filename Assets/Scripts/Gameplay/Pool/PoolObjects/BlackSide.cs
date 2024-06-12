@@ -1,5 +1,4 @@
-﻿using Gameplay.Abilities;
-using Gameplay.Vfx;
+﻿using Gameplay.Vfx;
 using UnityEngine;
 
 namespace Gameplay

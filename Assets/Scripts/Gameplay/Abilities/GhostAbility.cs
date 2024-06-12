@@ -1,4 +1,4 @@
-namespace Gameplay.Abilities
+namespace Gameplay
 {
     public sealed class GhostAbility : Ability
     {

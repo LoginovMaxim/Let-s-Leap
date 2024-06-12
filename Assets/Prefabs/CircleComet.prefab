@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4743293564209275567}
   m_Layer: 6
   m_Name: WhiteSide
-  m_TagString: Untagged
+  m_TagString: Comet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 5007533528169834629}
   m_Layer: 7
   m_Name: BlackSide
-  m_TagString: Untagged
+  m_TagString: BlackSide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
