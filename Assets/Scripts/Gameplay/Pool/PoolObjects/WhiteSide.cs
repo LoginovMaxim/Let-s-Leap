@@ -1,12 +1,18 @@
-﻿using Gameplay.Vfx;
+﻿using Gameplay.Abilities;
+using Gameplay.Vfx;
 using UnityEngine;
 
 namespace Gameplay
 {
     public class WhiteSide : CometSide
     {
-        protected override void OnPlayerCollided()
+        protected override void OnPlayerCollided(Player player)
         {
+            if (player.gameObject.GetComponent<GhostEffect>())
+            {
+                return;
+            }
+            
             ScoreCounter.Instance.AddScore(_comet.Points);
             PoolService.Instance.Despawn(_comet);
             

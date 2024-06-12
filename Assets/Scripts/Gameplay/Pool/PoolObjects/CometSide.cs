@@ -19,7 +19,7 @@ namespace Gameplay
         {
             if (other.gameObject.layer == 3)
             {
-                OnPlayerCollided();
+                OnPlayerCollided(other.gameObject.GetComponent<Player>());
                 return;
             }
             
@@ -30,7 +30,7 @@ namespace Gameplay
             }
         }
 
-        protected abstract void OnPlayerCollided();
+        protected abstract void OnPlayerCollided(Player player);
         protected abstract void OnBorderCollided();
     }
 }

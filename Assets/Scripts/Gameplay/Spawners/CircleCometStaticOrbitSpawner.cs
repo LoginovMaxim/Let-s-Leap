@@ -37,15 +37,15 @@ namespace Gameplay
                 position = Quaternion.AngleAxis(90, Vector3.forward) * position;
                 angle += angleStep;
             
-                var gameplayPoolObject = PoolService.Instance.Spawn(
+                var comet = (Comet) PoolService.Instance.Spawn(
                     _prefab,
                     position, 
                     Quaternion.identity, 
                     transform);
                 
-                _gameplayPoolObjects.Add(gameplayPoolObject);
+                _gameplayPoolObjects.Add(comet);
 
-                gameplayPoolObject.Init(
+                comet.Init(
                     GetLinearSpeed(), 
                     GetOrbitSpeed(), 
                     GetRotation(position), 

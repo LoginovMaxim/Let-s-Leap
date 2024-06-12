@@ -14,13 +14,13 @@ namespace Gameplay
             var randomDirectionY = Random.Range(-1f, 1f);
             var randomSpawnPosition = new Vector3(randomDirectionX, randomDirectionY, 0f) * spawnDistance;
             
-            var gameplayPoolObject = PoolService.Instance.Spawn(
+            var comet = (Comet) PoolService.Instance.Spawn(
                 _prefab,
                 randomSpawnPosition, 
                 Quaternion.identity, 
                 transform);
 
-            gameplayPoolObject.Init(
+            comet.Init(
                 GetLinearSpeed(), 
                 GetOrbitSpeed(), 
                 GetRotation(randomSpawnPosition), 

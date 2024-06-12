@@ -194,10 +194,10 @@ TextureImporter:
       name: GameAtlas-2_2
       rect:
         serializedVersion: 2
-        x: 14
-        y: 64
-        width: 189
-        height: 188
+        x: 13
+        y: 48
+        width: 200
+        height: 201
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,7 +215,7 @@ TextureImporter:
       name: GameAtlas-2_3
       rect:
         serializedVersion: 2
-        x: 212
+        x: 219
         y: 123
         width: 91
         height: 126

@@ -20,13 +20,13 @@ namespace Gameplay
                 }
             }
             
-            var gameplayPoolObject = PoolService.Instance.Spawn(
+            var comet = (Comet) PoolService.Instance.Spawn(
                 _prefab,
                 randomSpawnPosition, 
                 Quaternion.identity, 
                 transform);
 
-            gameplayPoolObject.Init(
+            comet.Init(
                 GetLinearSpeed(), 
                 GetOrbitSpeed(), 
                 GetRotation(randomSpawnPosition), 

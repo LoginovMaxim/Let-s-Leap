@@ -1,5 +1,4 @@
-﻿using Gameplay.Extensions;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Gameplay
 {

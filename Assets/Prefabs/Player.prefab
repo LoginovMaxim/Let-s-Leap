@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6592777888250708494}
-  - component: {fileID: 7321346012515099708}
   - component: {fileID: 6974825950416768453}
   - component: {fileID: 4726460097412355044}
   - component: {fileID: 600611847779363101}
+  - component: {fileID: 7321346012515099708}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -38,31 +38,6 @@ Transform:
   - {fileID: 1574792697591269378}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7321346012515099708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2359327503766018538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d833284621941adabca254f83313f8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _skinsConfig: {fileID: 11400000, guid: 44f99e39964a2ba4cb2d3f8848337353, type: 2}
-  _spriteRenderer: {fileID: 709210854178963194}
-  _sensitive: 10
-  _stretchCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _attractionForce: 1
-  _lateralSensitive: 10
-  _lateralForce: 1
-  _leapForce: 2
 --- !u!212 &6974825950416768453
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -177,6 +152,58 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &7321346012515099708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2359327503766018538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d833284621941adabca254f83313f8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinsConfig: {fileID: 11400000, guid: 44f99e39964a2ba4cb2d3f8848337353, type: 2}
+  _spriteRenderer: {fileID: 709210854178963194}
+  _sensitive: 10
+  _stretchCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0000008792849
+      value: 1.2
+      inSlope: 0.008190117
+      outSlope: 0.008190117
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.25340754
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0.012008164
+      outSlope: 0.012008164
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.10934365
+    - serializedVersion: 3
+      time: 1
+      value: 1.2
+      inSlope: -0.009752643
+      outSlope: -0.009752643
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.2128073
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _attractionForce: 1
+  _lateralSensitive: 10
+  _lateralForce: 1
+  _leapForce: 1.5
 --- !u!1 &5237018250635742436
 GameObject:
   m_ObjectHideFlags: 0

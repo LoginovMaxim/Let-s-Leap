@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1577609769462221868}
   - component: {fileID: 93735317441689091}
   - component: {fileID: -1427317666485748825}
-  - component: {fileID: -999346418204058004}
+  - component: {fileID: 318217632836493624}
   m_Layer: 6
-  m_Name: ScoreComet-1
+  m_Name: StarAbility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1169561888, guid: 9e1cc725056d46a4185a3bcf42126f21, type: 3}
+  m_Sprite: {fileID: 1179233475, guid: 9e1cc725056d46a4185a3bcf42126f21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,7 +149,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-999346418204058004
+--- !u!114 &318217632836493624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,8 +158,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7083961484091181371}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d19a604fe7ef433e9204dc0c17c1d6bd, type: 3}
+  m_Script: {fileID: 11500000, guid: d031172cd8e0419e85aaf4a42e2978d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rigidbody: {fileID: -1427317666485748825}
-  _points: 1
+  _playerStarView: {fileID: 5931105253419577364, guid: a0bddf39f574b8e49b3b5f1b658a4f8b, type: 3}
+  _duration: 5

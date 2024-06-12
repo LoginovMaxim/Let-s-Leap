@@ -1,3 +1,5 @@
+using DG.Tweening;
+using Gameplay.Abilities;
 using LetsLeap.Game;
 using UnityEngine;
 
@@ -65,6 +67,11 @@ namespace Gameplay
             UpdateTargetPosition();
             UpdateLookRotation();
             CheckLeapHeight();
+        }
+
+        public void SetAlpha(float alpha)
+        {
+            _spriteRenderer.DOFade(alpha, 0.2f);
         }
 
         private void UpdateAttractionForce()
@@ -144,7 +151,28 @@ namespace Gameplay
                 return;
             }
 
-            if (other.gameObject.TryGetComponent<PoolObject>(out var poolObject))
+            var isPoolObject = other.gameObject.TryGetComponent<PoolObject>(out var poolObject);
+
+            var isScoreComet = other.gameObject.TryGetComponent<ScoreComet>(out _);
+            var isAbility = other.gameObject.TryGetComponent<Ability>(out _);
+            
+            if (GetComponent<GhostEffect>())
+            {
+                if (isScoreComet || isAbility)
+                {
+                    if (isPoolObject)
+                    {
+                        PoolService.Instance.Despawn(poolObject);
+                    }
+                    
+                    _leapDelta = 0;
+                    _positiveLeapsCount++;
+                }
+                
+                return;
+            }
+            
+            if (isPoolObject)
             {
                 PoolService.Instance.Despawn(poolObject);
             }

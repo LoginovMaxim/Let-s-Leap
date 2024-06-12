@@ -5,7 +5,7 @@ namespace Gameplay
     public abstract class Spawner : MonoBehaviour
     {
         [Header("Spawner")]
-        [SerializeField] protected Comet _prefab;
+        [SerializeField] protected PoolObject _prefab;
         [SerializeField] protected Vector2 _spawnCircleRange;
         [SerializeField] protected Vector2 _linearSpeedRange;
         [SerializeField] protected Vector2 _orbitSpeedRange;
