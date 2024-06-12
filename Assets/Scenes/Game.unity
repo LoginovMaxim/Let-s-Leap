@@ -227,8 +227,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1308498802}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &209898927
@@ -261,11 +260,24 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 982820102}
+  - {fileID: 632360632}
   - {fileID: 1536266669}
   - {fileID: 745354760}
   - {fileID: 783931912}
   - {fileID: 1000914336}
   - {fileID: 1969454653}
+  - {fileID: 329383753}
+  - {fileID: 2088649804}
+  - {fileID: 1853222395}
+  - {fileID: 808455861}
+  - {fileID: 330598212}
+  - {fileID: 1201339719}
+  - {fileID: 952050965}
+  - {fileID: 1280833312}
+  - {fileID: 1528053523}
+  - {fileID: 379293407}
+  - {fileID: 1649814344}
+  - {fileID: 604387844}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &216587143
@@ -497,6 +509,109 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1442109839080226635, guid: f21d7c1101652a24ea3000c38917ff27, type: 3}
   m_PrefabInstance: {fileID: 291037275}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &329383752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 329383753}
+  - component: {fileID: 329383754}
+  m_Layer: 0
+  m_Name: BlockComet-DynamicOrbit-Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &329383753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329383752}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 209898928}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &329383754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329383752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00a9dd541604627b71c52d367edbb8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 6073921029664253510, guid: 789e357d4561d9d419cb66c5d871bb91, type: 3}
+  _spawnCircleRange: {x: 8, y: 10}
+  _linearSpeedRange: {x: 0, y: 0}
+  _orbitSpeedRange: {x: 8, y: 12}
+  _scaleRange: {x: 0.8, y: 1.2}
+  _spawnPeriodRange: {x: 4, y: 4}
+  _spawnCountRange: {x: 1, y: 1}
+--- !u!1 &330598211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 330598212}
+  - component: {fileID: 330598213}
+  m_Layer: 0
+  m_Name: HighBlockComet-StaticOrbit-large-Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &330598212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330598211}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 209898928}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &330598213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330598211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3670967346a9404b9cb1eddfd8ef178b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 4387633015781323737, guid: eed1425feae198f45b5610b9e2509299, type: 3}
+  _spawnCircleRange: {x: 12, y: 12}
+  _linearSpeedRange: {x: 0, y: 0}
+  _orbitSpeedRange: {x: 0, y: 0}
+  _scaleRange: {x: 1.5, y: 1.5}
+  _count: 8
+  _isSameSpeed: 0
+  _isSameOrbitSpeed: 0
 --- !u!4 &345863597 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6592777888250708494, guid: 13437134dcb718f4ea567d7f0462f114, type: 3}
@@ -574,6 +689,57 @@ Transform:
   - {fileID: 1800113912}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &379293406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 379293407}
+  - component: {fileID: 379293408}
+  m_Layer: 0
+  m_Name: CircleComet-DynamicOrbit-large-Attraction-Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &379293407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379293406}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 209898928}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &379293408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379293406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00a9dd541604627b71c52d367edbb8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 8270161469032217728, guid: f88b67ccf1a5c864198cfcecbd8b582b, type: 3}
+  _spawnCircleRange: {x: 12, y: 24}
+  _linearSpeedRange: {x: -12, y: -8}
+  _orbitSpeedRange: {x: -8, y: 8}
+  _scaleRange: {x: 1.6, y: 2.4}
+  _spawnPeriodRange: {x: 6, y: 12}
+  _spawnCountRange: {x: 4, y: 8}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,6 +1046,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547590723}
   m_CullTransparentMesh: 1
+--- !u!1 &604387843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 604387844}
+  - component: {fileID: 604387845}
+  m_Layer: 0
+  m_Name: QuarterCircleComet-DynamicOrbit-large-Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &604387844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604387843}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 209898928}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &604387845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604387843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3670967346a9404b9cb1eddfd8ef178b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 2255402743172978559, guid: c53e90ef7c3e30240a25de9271829c68, type: 3}
+  _spawnCircleRange: {x: 28, y: 28}
+  _linearSpeedRange: {x: 0, y: 0}
+  _orbitSpeedRange: {x: 24, y: 24}
+  _scaleRange: {x: 4, y: 4}
+  _count: 10
+  _isSameSpeed: 0
+  _isSameOrbitSpeed: 1
 --- !u!1 &612394286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,6 +1285,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &632360631
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 632360632}
+  - component: {fileID: 632360633}
+  m_Layer: 0
+  m_Name: ScoreComet-2-Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &632360632
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632360631}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 209898928}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &632360633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632360631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00a9dd541604627b71c52d367edbb8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: -999346418204058004, guid: 9eadebf01e25f9d44bfbfb1188a1028c, type: 3}
+  _spawnCircleRange: {x: 10, y: 20}
+  _linearSpeedRange: {x: -5, y: -3}
+  _orbitSpeedRange: {x: 0, y: 0}
+  _scaleRange: {x: 0.8, y: 1.2}
+  _spawnPeriodRange: {x: 3, y: 5}
+  _spawnCountRange: {x: 1, y: 1}
 --- !u!1001 &664334664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1173,7 +1442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3670967346a9404b9cb1eddfd8ef178b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 7005135568974001493, guid: f88b67ccf1a5c864198cfcecbd8b582b, type: 3}
+  _prefab: {fileID: 8270161469032217728, guid: f88b67ccf1a5c864198cfcecbd8b582b, type: 3}
   _spawnCircleRange: {x: 10, y: 10}
   _linearSpeedRange: {x: 0, y: 0}
   _orbitSpeedRange: {x: 0, y: 0}
@@ -1287,7 +1556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3670967346a9404b9cb1eddfd8ef178b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 7005135568974001493, guid: f88b67ccf1a5c864198cfcecbd8b582b, type: 3}
+  _prefab: {fileID: 8270161469032217728, guid: f88b67ccf1a5c864198cfcecbd8b582b, type: 3}
   _spawnCircleRange: {x: 10, y: 10}
   _linearSpeedRange: {x: 0, y: 0}
   _orbitSpeedRange: {x: 1.5, y: 3}
@@ -1300,6 +1569,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1442109839080226635, guid: f21d7c1101652a24ea3000c38917ff27, type: 3}
   m_PrefabInstance: {fileID: 7967404163760218337}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &808455860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 808455861}
+  - component: {fileID: 808455862}
+  m_Layer: 0
+  m_Name: QuarterCircleComet-DynamicOrbit-Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &808455861
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808455860}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 209898928}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &808455862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808455860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00a9dd541604627b71c52d367edbb8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 2255402743172978559, guid: c53e90ef7c3e30240a25de9271829c68, type: 3}
+  _spawnCircleRange: {x: 10, y: 16}
+  _linearSpeedRange: {x: 0, y: 0}
+  _orbitSpeedRange: {x: 7, y: 7}
+  _scaleRange: {x: 1.5, y: 2.5}
+  _spawnPeriodRange: {x: 3, y: 3}
+  _spawnCountRange: {x: 1, y: 1}
 --- !u!1 &931162013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,6 +1722,58 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &952050964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 952050965}
+  - component: {fileID: 952050966}
+  m_Layer: 0
+  m_Name: CircleComet-DynamicOrbit-small-fast-Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &952050965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952050964}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 209898928}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &952050966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952050964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3670967346a9404b9cb1eddfd8ef178b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 8270161469032217728, guid: f88b67ccf1a5c864198cfcecbd8b582b, type: 3}
+  _spawnCircleRange: {x: 6, y: 6}
+  _linearSpeedRange: {x: 0, y: 0}
+  _orbitSpeedRange: {x: 9, y: 12}
+  _scaleRange: {x: 0.8, y: 0.8}
+  _count: 12
+  _isSameSpeed: 0
+  _isSameOrbitSpeed: 1
 --- !u!1 &977615234
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,7 +1830,7 @@ GameObject:
   - component: {fileID: 982820102}
   - component: {fileID: 982820103}
   m_Layer: 0
-  m_Name: Circle-Spawner
+  m_Name: ScoreComet-1-Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1604,7 +1976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f9353176374c99a0bebe18d878f0fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 4870025901840203618, guid: 45524a29fcf22044a9f26fef9830ef40, type: 3}
+  _prefab: {fileID: 208374077954031097, guid: 45524a29fcf22044a9f26fef9830ef40, type: 3}
   _spawnCircleRange: {x: 0.1, y: 0.1}
   _linearSpeedRange: {x: 0.8, y: 1.2}
   _orbitSpeedRange: {x: 0, y: 0}
@@ -1875,6 +2247,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1442109839080226635, guid: f21d7c1101652a24ea3000c38917ff27, type: 3}
   m_PrefabInstance: {fileID: 1147598513}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1201339718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1201339719}
+  - component: {fileID: 1201339720}
+  m_Layer: 0
+  m_Name: HighBlockDoubleBlackComet-StaticOrbit-large-Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1201339719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201339718}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 209898928}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1201339720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201339718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3670967346a9404b9cb1eddfd8ef178b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 4387633015781323737, guid: 8cb9fceff41a08e4dae5944087602902, type: 3}
+  _spawnCircleRange: {x: 16, y: 16}
+  _linearSpeedRange: {x: 0, y: 0}
+  _orbitSpeedRange: {x: 0, y: 0}
+  _scaleRange: {x: 2, y: 2}
+  _count: 6
+  _isSameSpeed: 0
+  _isSameOrbitSpeed: 0
 --- !u!1 &1205368667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1901,8 +2325,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 612394287}
   - {fileID: 1230337586}
@@ -2092,6 +2516,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258533294}
   m_CullTransparentMesh: 1
+--- !u!1 &1280833311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1280833312}
+  - component: {fileID: 1280833313}
+  m_Layer: 0
+  m_Name: QuarterCircleComet-DynamicOrbit-medium-Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1280833312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280833311}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 209898928}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1280833313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280833311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3670967346a9404b9cb1eddfd8ef178b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 2255402743172978559, guid: c53e90ef7c3e30240a25de9271829c68, type: 3}
+  _spawnCircleRange: {x: 10, y: 10}
+  _linearSpeedRange: {x: 0, y: 0}
+  _orbitSpeedRange: {x: -15, y: -15}
+  _scaleRange: {x: 1.25, y: 1.25}
+  _count: 9
+  _isSameSpeed: 0
+  _isSameOrbitSpeed: 1
 --- !u!1 &1308498801
 GameObject:
   m_ObjectHideFlags: 0
@@ -2117,12 +2593,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308498801}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 168713622}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1308498803
 MonoBehaviour:
@@ -2153,7 +2629,6 @@ MonoBehaviour:
     Spawners:
     - {fileID: 982820103}
     - {fileID: 1536266670}
-    - {fileID: 783931913}
     - {fileID: 1000914337}
   - BackgoundColor: {r: 0.2, g: 1, b: 1, a: 1}
     CameraBackgroundColor: {r: 0.003921569, g: 0.19607843, b: 0.19607843, a: 1}
@@ -2165,37 +2640,67 @@ MonoBehaviour:
     CameraBackgroundColor: {r: 0.06666667, g: 0.06666667, b: 0.19607843, a: 1}
     Spawners:
     - {fileID: 982820103}
+    - {fileID: 1000914337}
+    - {fileID: 329383754}
   - BackgoundColor: {r: 1, g: 0.34117648, b: 1, a: 1}
     CameraBackgroundColor: {r: 0.19607843, g: 0.039215688, b: 0.19607843, a: 1}
     Spawners:
     - {fileID: 982820103}
+    - {fileID: 1536266670}
+    - {fileID: 2088649805}
   - BackgoundColor: {r: 1, g: 0.57254905, b: 0.14509805, a: 1}
     CameraBackgroundColor: {r: 0.19607845, g: 0.09411766, b: 0, a: 1}
     Spawners:
     - {fileID: 982820103}
+    - {fileID: 1853222396}
+    - {fileID: 745354761}
+    - {fileID: 632360633}
   - BackgoundColor: {r: 0.54901963, g: 1, b: 0.101960786, a: 1}
     CameraBackgroundColor: {r: 0.09019608, g: 0.19607845, b: 0, a: 1}
     Spawners:
     - {fileID: 982820103}
+    - {fileID: 808455862}
+    - {fileID: 1649814345}
+    - {fileID: 2088649805}
+    - {fileID: 632360633}
   - BackgoundColor: {r: 0.101960786, g: 1, b: 0.54901963, a: 1}
     CameraBackgroundColor: {r: 0, g: 0.19607845, b: 0.09019608, a: 1}
     Spawners:
     - {fileID: 982820103}
+    - {fileID: 330598213}
+    - {fileID: 1536266670}
+    - {fileID: 783931913}
+    - {fileID: 632360633}
   - BackgoundColor: {r: 0.101960786, g: 0.54901963, b: 1, a: 1}
     CameraBackgroundColor: {r: 0, g: 0.09019608, b: 0.19607845, a: 1}
     Spawners:
     - {fileID: 982820103}
+    - {fileID: 2088649805}
+    - {fileID: 1649814345}
+    - {fileID: 808455862}
+    - {fileID: 632360633}
   - BackgoundColor: {r: 0.64705884, g: 0.29803923, b: 1, a: 1}
     CameraBackgroundColor: {r: 0.1137255, g: 0.03137255, b: 0.19607845, a: 1}
     Spawners:
     - {fileID: 982820103}
+    - {fileID: 1201339720}
+    - {fileID: 952050966}
+    - {fileID: 632360633}
+    - {fileID: 1280833313}
   - BackgoundColor: {r: 1, g: 0.34117648, b: 0.6666667, a: 1}
     CameraBackgroundColor: {r: 0.19607845, g: 0.039215688, b: 0.11764707, a: 1}
     Spawners:
     - {fileID: 982820103}
+    - {fileID: 632360633}
+    - {fileID: 2088649805}
+    - {fileID: 1528053524}
+    - {fileID: 379293408}
+    - {fileID: 1649814345}
+    - {fileID: 604387845}
   _gameplayConfig: {fileID: 11400000, guid: a441271856c349742aefccd36a3d5207, type: 2}
   _background: {fileID: 1316341332}
   _camera: {fileID: 519420031}
+  DebugWave: 0
 --- !u!1 &1316341331
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,7 +2760,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: f2549d57bb897e54caa884309eeb1458, type: 3}
-  m_Color: {r: 1, g: 0.2509804, b: 0.2509804, a: 1}
+  m_Color: {r: 1, g: 0.25, b: 0.25, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2582,6 +3087,58 @@ Transform:
   - {fileID: 1147598514}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1528053522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1528053523}
+  - component: {fileID: 1528053524}
+  m_Layer: 0
+  m_Name: WideBlockComet-StaticOrbit-large-Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1528053523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528053522}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 209898928}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1528053524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528053522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3670967346a9404b9cb1eddfd8ef178b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 2329084658295605933, guid: 1b49752ed0b72844c9ea5cb474f5635b, type: 3}
+  _spawnCircleRange: {x: 16, y: 16}
+  _linearSpeedRange: {x: 0, y: 0}
+  _orbitSpeedRange: {x: -1, y: -1}
+  _scaleRange: {x: 2, y: 2}
+  _count: 12
+  _isSameSpeed: 0
+  _isSameOrbitSpeed: 1
 --- !u!1 &1536266668
 GameObject:
   m_ObjectHideFlags: 0
@@ -2626,13 +3183,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b00a9dd541604627b71c52d367edbb8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 7005135568974001493, guid: f88b67ccf1a5c864198cfcecbd8b582b, type: 3}
+  _prefab: {fileID: 8270161469032217728, guid: f88b67ccf1a5c864198cfcecbd8b582b, type: 3}
   _spawnCircleRange: {x: 5.5, y: 7.5}
   _linearSpeedRange: {x: 0, y: 0}
   _orbitSpeedRange: {x: 0, y: 0}
   _scaleRange: {x: 0.8, y: 1.2}
   _spawnPeriodRange: {x: 2, y: 4}
-  _spawnCountRange: {x: 1, y: 3}
+  _spawnCountRange: {x: 1, y: 2}
 --- !u!1001 &1567193556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2847,6 +3404,57 @@ MonoBehaviour:
   _lineRenderer: {fileID: 1642914433}
   _playerTransform: {fileID: 345863597}
   _starTransform: {fileID: 2003985231}
+--- !u!1 &1649814343
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1649814344}
+  - component: {fileID: 1649814345}
+  m_Layer: 0
+  m_Name: BlockSpikeComet-Spawner-fast
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1649814344
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649814343}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 209898928}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1649814345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649814343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f9353176374c99a0bebe18d878f0fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 208374077954031097, guid: 45524a29fcf22044a9f26fef9830ef40, type: 3}
+  _spawnCircleRange: {x: 0.1, y: 0.1}
+  _linearSpeedRange: {x: 4, y: 6}
+  _orbitSpeedRange: {x: 0, y: 0}
+  _scaleRange: {x: 0.8, y: 0.8}
+  _spawnPeriodRange: {x: 7.5, y: 7.5}
+  _spawnCountRange: {x: 9, y: 9}
 --- !u!1001 &1655635340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3059,6 +3667,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1442109839080226635, guid: f21d7c1101652a24ea3000c38917ff27, type: 3}
   m_PrefabInstance: {fileID: 1821394713}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1853222394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1853222395}
+  - component: {fileID: 1853222396}
+  m_Layer: 0
+  m_Name: QuarterCircleComet-Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1853222395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853222394}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 209898928}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1853222396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853222394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00a9dd541604627b71c52d367edbb8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 2255402743172978559, guid: c53e90ef7c3e30240a25de9271829c68, type: 3}
+  _spawnCircleRange: {x: 6, y: 12}
+  _linearSpeedRange: {x: 0, y: 0}
+  _orbitSpeedRange: {x: 0, y: 0}
+  _scaleRange: {x: 0.8, y: 1.2}
+  _spawnPeriodRange: {x: 4, y: 4}
+  _spawnCountRange: {x: 2, y: 2}
 --- !u!1001 &1898594697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3227,7 +3886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b00a9dd541604627b71c52d367edbb8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 7005135568974001493, guid: f88b67ccf1a5c864198cfcecbd8b582b, type: 3}
+  _prefab: {fileID: 8270161469032217728, guid: f88b67ccf1a5c864198cfcecbd8b582b, type: 3}
   _spawnCircleRange: {x: 6, y: 12}
   _linearSpeedRange: {x: -6, y: -4}
   _orbitSpeedRange: {x: 2, y: 4}
@@ -3533,6 +4192,58 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 45.6, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &2088649803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2088649804}
+  - component: {fileID: 2088649805}
+  m_Layer: 0
+  m_Name: WideBlockComet-StaticOrbit-Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2088649804
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088649803}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 209898928}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2088649805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088649803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3670967346a9404b9cb1eddfd8ef178b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 2329084658295605933, guid: 1b49752ed0b72844c9ea5cb474f5635b, type: 3}
+  _spawnCircleRange: {x: 9, y: 9}
+  _linearSpeedRange: {x: 0, y: 0}
+  _orbitSpeedRange: {x: 0, y: 0}
+  _scaleRange: {x: 1, y: 1}
+  _count: 9
+  _isSameSpeed: 0
+  _isSameOrbitSpeed: 0
 --- !u!1 &2114993652
 GameObject:
   m_ObjectHideFlags: 0
@@ -3970,6 +4681,7 @@ SceneRoots:
   - {fileID: 2130441605}
   - {fileID: 1527388034}
   - {fileID: 168713622}
+  - {fileID: 1308498802}
   - {fileID: 977615236}
   - {fileID: 1108509712}
   - {fileID: 209898928}

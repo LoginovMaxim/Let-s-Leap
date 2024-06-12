@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 6692592988770139149}
   - component: {fileID: 1006619790297219826}
   - component: {fileID: 8936777200070735560}
-  - component: {fileID: 4870025901840203618}
+  - component: {fileID: 208374077954031097}
   m_Layer: 0
   m_Name: BlockSpikeComet
   m_TagString: Untagged
@@ -304,7 +304,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4870025901840203618
+--- !u!114 &208374077954031097
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -313,8 +313,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1516072561769416358}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1517cbd7f6347878eb4fbb3150b99ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 33a2e20ab344419390b8456e4ec9e201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 8936777200070735560}
-  _points: 1
+  _points: 3

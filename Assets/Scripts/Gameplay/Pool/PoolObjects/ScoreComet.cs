@@ -1,11 +1,9 @@
-using DG.Tweening;
 using Gameplay.Vfx;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Gameplay
 {
-    public sealed class Circle : GameplayPoolObject
+    public sealed class ScoreComet : Comet
     {
         private LayerMask _playerMask;
         private LayerMask _borderMask;
@@ -29,7 +27,7 @@ namespace Gameplay
                 return;
             }
             
-            PointsCounter.Instance.AddPoints(_points);
+            ScoreCounter.Instance.AddScore(_points);
             
             PoolService.Instance.Spawn<ExplosionEffect>(
                 transform.position, 

@@ -47,7 +47,11 @@ namespace Gameplay
             Transform parent) 
             where TPoolObject : PoolObject
         {
-            var poolObjectId = typeof(TPoolObject).ToString().GetShortTypeName();
+            var poolObjectId = poolObjectPrefab.name;
+            if (poolObjectId.Contains(' '))
+            {
+                poolObjectId = poolObjectId.Split(' ')[0];
+            }
             
             if (TryGetPoolObjectFromPoolCache(poolObjectId, out var cachedPoolObject))
             {

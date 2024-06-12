@@ -6,7 +6,7 @@ namespace Gameplay
         public const string CircleComet = "CircleComet";
         /*
          * 
-        Circle,
+        ScoreComet,
         CircleComet,
         BlockComet,
         BlockSpikeComet,

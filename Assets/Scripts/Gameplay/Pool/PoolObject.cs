@@ -5,12 +5,25 @@ namespace Gameplay
 {
     public abstract class PoolObject : MonoBehaviour
     {
-        public string PoolObjectId => GetType().ToString().GetShortTypeName();
+        public string PoolObjectId
+        {
+            get
+            {
+                var poolObjectId = gameObject.name;
+                if (poolObjectId.Contains(' '))
+                {
+                    poolObjectId = poolObjectId.Split(' ')[0];
+                }
+
+                return poolObjectId;
+            }
+        }
         public bool IsActive => gameObject.activeSelf;
         
         public virtual void Reinitialize(Vector3 position)
         {
             transform.position = position;
+            transform.localScale = Vector3.one;
             transform.localScale = Vector3.one;
             
             gameObject.SetActive(true);

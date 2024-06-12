@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 2542750957239493888}
   - component: {fileID: 1865249797152095852}
   - component: {fileID: 6923401653028660529}
-  - component: {fileID: 7005135568974001493}
+  - component: {fileID: 8270161469032217728}
   m_Layer: 0
   m_Name: CircleComet
   m_TagString: Untagged
@@ -212,7 +212,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7005135568974001493
+--- !u!114 &8270161469032217728
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5042714087061770796}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1517cbd7f6347878eb4fbb3150b99ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 33a2e20ab344419390b8456e4ec9e201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 6923401653028660529}

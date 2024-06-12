@@ -17,11 +17,11 @@ namespace Editor.Tools
 
         private List<GameObject> _gameObjects = new List<GameObject>();
 
-        [MenuItem("Let's Leap/Circle Formation")]
+        [MenuItem("Let's Leap/ScoreComet Formation")]
         private static void Init()
         {
             var window = GetWindowWithRect<CircleFormationWindow>(new Rect(0, 0, 400, 500));
-            window.titleContent = new GUIContent("Circle Formation");
+            window.titleContent = new GUIContent("ScoreComet Formation");
             window.Show();
         }
 

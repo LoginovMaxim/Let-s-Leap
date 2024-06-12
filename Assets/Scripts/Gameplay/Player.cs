@@ -34,6 +34,8 @@ namespace Gameplay
         private int _positiveLeapsCount;
         private bool _isTouching;
         
+        public float MaxLeapHeight { get; private set; }
+        
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
@@ -62,6 +64,7 @@ namespace Gameplay
             UpdateLateralForce();
             UpdateTargetPosition();
             UpdateLookRotation();
+            CheckLeapHeight();
         }
 
         private void UpdateAttractionForce()
@@ -112,6 +115,14 @@ namespace Gameplay
             _rigidbody.rotation = angle + 90;
         }
 
+        private void CheckLeapHeight()
+        {
+            if (transform.position.sqrMagnitude > Statistics.Instance.Leap * Statistics.Instance.Leap)
+            {
+                Statistics.Instance.Leap = Mathf.RoundToInt(Mathf.Sqrt(transform.position.sqrMagnitude));
+            }
+        }
+
         private void UpdateStretch()
         {
             var localScale = transform.localScale;
@@ -125,7 +136,7 @@ namespace Gameplay
         {
             if (other.gameObject.layer == 9)
             {
-                PointsCounter.Instance.IncreaseMultiplier();
+                ScoreCounter.Instance.IncreaseScoreMultiplier();
             }
             
             if (other.gameObject.layer != 6)

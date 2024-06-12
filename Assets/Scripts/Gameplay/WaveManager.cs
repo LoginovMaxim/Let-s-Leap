@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using LetsLeap.Game;
 using UnityEngine;
 
 namespace Gameplay
@@ -16,9 +17,15 @@ namespace Gameplay
         
         private float _waveChangeTime;
         private int _currentWaveNumber;
+
+        public int DebugWave;
         
         private void Start()
         {
+#if UNITY_EDITOR
+            _currentWaveNumber = DebugWave;
+#endif
+            
             UpdateNextWaveTime();
             
             var waveData = _wavesData[_currentWaveNumber];
@@ -26,6 +33,9 @@ namespace Gameplay
             {
                 spawner.UnPause();
             }
+
+            _background.color = waveData.BackgoundColor;
+            _camera.backgroundColor = waveData.CameraBackgroundColor;
         }
 
         private void Update()
@@ -46,13 +56,10 @@ namespace Gameplay
 
         private void NextWave()
         {
-            if (_currentWaveNumber > 0)
+            var previousWaveData = _wavesData[_currentWaveNumber];
+            foreach (var spawner in previousWaveData.Spawners)
             {
-                var previousWaveData = _wavesData[_currentWaveNumber];
-                foreach (var spawner in previousWaveData.Spawners)
-                {
-                    spawner.Pause();
-                }
+                spawner.Pause();
             }
 
             _currentWaveNumber++;
@@ -65,7 +72,12 @@ namespace Gameplay
 
             _background.color = waveData.BackgoundColor;
             _camera.backgroundColor = waveData.CameraBackgroundColor;
-
+            
+            if (_currentWaveNumber > Statistics.Instance.Stage)
+            {
+                Statistics.Instance.Stage = _currentWaveNumber;
+            }
+            
             Hud.Instance.SplashWave();
         }
 

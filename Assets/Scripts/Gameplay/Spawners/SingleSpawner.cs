@@ -10,7 +10,7 @@ namespace Gameplay
         [SerializeField] private bool _isSameSpeed;
         [SerializeField] private bool _isSameOrbitSpeed;
 
-        private List<GameplayPoolObject> _gameplayPoolObjects = new List<GameplayPoolObject>();
+        private List<Comet> _gameplayPoolObjects = new List<Comet>();
         private bool _wasSpawned; 
         
         public override void UnPause()

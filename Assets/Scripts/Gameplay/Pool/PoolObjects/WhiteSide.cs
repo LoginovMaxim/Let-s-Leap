@@ -7,13 +7,15 @@ namespace Gameplay
     {
         protected override void OnPlayerCollided()
         {
-            PointsCounter.Instance.AddPoints(_comet.Points);
+            ScoreCounter.Instance.AddScore(_comet.Points);
             PoolService.Instance.Despawn(_comet);
             
-            PoolService.Instance.Spawn<ExplosionEffect>(
+            var explosionEffect = PoolService.Instance.Spawn<ExplosionEffect>(
                 transform.position, 
                 Quaternion.identity, 
                 null);
+
+            explosionEffect.transform.localScale = _comet.transform.localScale;
         }
 
         protected override void OnBorderCollided()

@@ -89,12 +89,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.32, y: 0}
-      - {x: 0.32, y: 0.5}
-      - {x: 0.2, y: 0.64}
-      - {x: -0.2, y: 0.64}
-      - {x: -0.32, y: 0.5}
-      - {x: -0.32, y: 0}
+    - - {x: 0.65, y: 0.1}
+      - {x: 0.65, y: 0.5}
+      - {x: 0.5, y: 0.64}
+      - {x: -0.5, y: 0.64}
+      - {x: -0.65, y: 0.5}
+      - {x: -0.65, y: 0.1}
   m_UseDelaunayMesh: 0
 --- !u!1 &4148614285143693494
 GameObject:
@@ -121,7 +121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4148614285143693494}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -129,7 +129,7 @@ Transform:
   - {fileID: 2700097014048032703}
   - {fileID: 8231261572193247087}
   m_Father: {fileID: 2542750957239493888}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &1584428346435281727
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -340374573, guid: 9e1cc725056d46a4185a3bcf42126f21, type: 3}
+  m_Sprite: {fileID: -517803209, guid: 9e1cc725056d46a4185a3bcf42126f21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -192,9 +192,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2542750957239493888}
   - component: {fileID: 7381316448994172957}
-  - component: {fileID: 6073921029664253510}
+  - component: {fileID: 2329084658295605933}
   m_Layer: 0
-  m_Name: BlockComet
+  m_Name: WideBlockComet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -243,7 +243,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6073921029664253510
+--- !u!114 &2329084658295605933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 7381316448994172957}
-  _points: 2
+  _points: 5
 --- !u!1 &6530568814486672802
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,10 +346,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.32, y: 0}
-      - {x: 0.32, y: -0.5}
-      - {x: 0.2, y: -0.64}
-      - {x: -0.2, y: -0.64}
-      - {x: -0.32, y: -0.5}
-      - {x: -0.32, y: 0}
+    - - {x: 0.65, y: 0}
+      - {x: 0.65, y: -0.5}
+      - {x: 0.5, y: -0.64}
+      - {x: -0.5, y: -0.64}
+      - {x: -0.65, y: -0.5}
+      - {x: -0.65, y: 0}
   m_UseDelaunayMesh: 0
