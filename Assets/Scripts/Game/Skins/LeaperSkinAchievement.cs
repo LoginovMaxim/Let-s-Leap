@@ -5,9 +5,8 @@ namespace LetsLeap.Game.Skins
     public sealed class LeaperSkinAchievement : SkinAchievement
     {
         private const int ScoreMultiplyToUnlock = 10;
-        private const int SkinIndex = 2;
         
-        public LeaperSkinAchievement(SkinsConfig skinsConfig) : base(skinsConfig)
+        public LeaperSkinAchievement(SkinsConfig skinsConfig, int skinIndex) : base(skinsConfig, skinIndex)
         {
         }
 
@@ -29,6 +28,12 @@ namespace LetsLeap.Game.Skins
             {
                 _skinsConfig.SkinData[SkinIndex].IsUnlocked = true;
             }
+        }
+
+        public override string GetDescription()
+        {
+            return _skinsConfig.SkinData[SkinIndex].Description.
+                Replace("X", Statistics.Instance.Multiply.ToString());
         }
     }
 }

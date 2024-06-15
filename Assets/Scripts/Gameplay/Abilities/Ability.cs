@@ -47,6 +47,7 @@ namespace Gameplay
             }
             
             ApplyAbility(other.gameObject.GetComponent<Player>());
+            ScoreCounter.Instance.OnAbilityApplied();
         }
 
         protected abstract void ApplyAbility(Player player);

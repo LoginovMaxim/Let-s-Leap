@@ -5,9 +5,8 @@ namespace LetsLeap.Game.Skins
     public sealed class VendettaSkinAchievement : SkinAchievement
     {
         private const int DeathCountToUnlock = 50;
-        private const int SkinIndex = 3;
         
-        public VendettaSkinAchievement(SkinsConfig skinsConfig) : base(skinsConfig)
+        public VendettaSkinAchievement(SkinsConfig skinsConfig, int skinIndex) : base(skinsConfig, skinIndex)
         {
         }
 
@@ -22,6 +21,12 @@ namespace LetsLeap.Game.Skins
             {
                 _skinsConfig.SkinData[SkinIndex].IsUnlocked = true;
             }
+        }
+
+        public override string GetDescription()
+        {
+            return _skinsConfig.SkinData[SkinIndex].Description.
+                Replace("X", PlayerPrefs.GetInt(Constants.PrefsKeys.DeathCountKey).ToString());
         }
     }
 }

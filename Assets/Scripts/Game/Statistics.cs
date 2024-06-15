@@ -10,6 +10,8 @@ namespace LetsLeap.Game
         private const string MultiplyKey = "Multiply";
         private const string StageKey = "Stage";
         private const string SkinProgressKey = "SkinProgress";
+        private const string AppliedAbilitiesAmountKey = "AppliedAbilitiesAmount";
+        private const string DestroyedCometsAmountKey = "DestroyedCometsAmount";
 
         public int Record
         {
@@ -39,6 +41,18 @@ namespace LetsLeap.Game
         {
             get => PlayerPrefs.GetInt(SkinProgressKey);
             set => PlayerPrefs.SetInt(SkinProgressKey, value);
+        }
+
+        public int AppliedAbilitiesAmount
+        {
+            get => PlayerPrefs.GetInt(AppliedAbilitiesAmountKey);
+            set => PlayerPrefs.SetInt(AppliedAbilitiesAmountKey, value);
+        }
+
+        public int DestroyedCometsAmount
+        {
+            get => PlayerPrefs.GetInt(DestroyedCometsAmountKey);
+            set => PlayerPrefs.SetInt(DestroyedCometsAmountKey, value);
         }
         
         protected override void Awake()

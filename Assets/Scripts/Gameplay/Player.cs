@@ -9,7 +9,13 @@ namespace Gameplay
     {
         [Header("Skin")] 
         [SerializeField] private SkinsConfig _skinsConfig;
-        [SerializeField] private SpriteRenderer _spriteRenderer;
+        [SerializeField] private SpriteRenderer _skinRenderer;
+        [SerializeField] private Transform _skinTransform;
+        
+        [Header("Rotations")] 
+        [SerializeField] private float _leapUpRotation;
+        [SerializeField] private float _leapDownRotation;
+        [SerializeField] private float _speedLeapRotation;
         
         [Header("Common")]
         [SerializeField] private float _sensitive;
@@ -32,6 +38,7 @@ namespace Gameplay
         private Vector2 _lateralVector;
         private Vector2 _leapVector;
         private float _leapDelta = 1;
+        private float _targetLeapRotation;
         private int _positiveLeapsCount;
         private bool _isTouching;
         
@@ -49,7 +56,7 @@ namespace Gameplay
                     continue;
                 }
 
-                _spriteRenderer.sprite = skinData.Icon;
+                _skinRenderer.sprite = skinData.Icon;
             }
         }
 
@@ -65,12 +72,13 @@ namespace Gameplay
             UpdateLateralForce();
             UpdateTargetPosition();
             UpdateLookRotation();
+            UpdateLeapRotation();
             CheckLeapHeight();
         }
 
         public void SetAlpha(float alpha)
         {
-            _spriteRenderer.DOFade(alpha, 0.2f);
+            _skinRenderer.DOFade(alpha, 0.2f);
         }
 
         private void UpdateAttractionForce()
@@ -87,6 +95,7 @@ namespace Gameplay
             if (_leapDelta >= 1f)
             {
                 _positiveLeapsCount = 0;
+                _targetLeapRotation = _leapDownRotation;
             }
             
             _attractionVector = Vector2.Lerp(_leapVector, attractionVector, Mathf.Clamp01(_leapDelta));
@@ -119,6 +128,19 @@ namespace Gameplay
             var vectorToTarget = -transform.position;
             var angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
             _rigidbody.rotation = angle + 90;
+        }
+
+        private void UpdateLeapRotation()
+        {
+            var skinRotation = _skinTransform.localRotation.eulerAngles;
+            
+            if (skinRotation.z > 180)
+            {
+                skinRotation.z -= 360;
+            }
+            
+            skinRotation.z = Mathf.Lerp(skinRotation.z, _targetLeapRotation, _speedLeapRotation * Time.deltaTime);
+            _skinTransform.localRotation = Quaternion.Euler(skinRotation);
         }
 
         private void CheckLeapHeight()
@@ -177,6 +199,7 @@ namespace Gameplay
             }
             
             _leapDelta = 0;
+            _targetLeapRotation = _leapUpRotation;
             _positiveLeapsCount++;
         }
     }

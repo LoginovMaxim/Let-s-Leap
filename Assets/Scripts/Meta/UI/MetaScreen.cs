@@ -98,6 +98,18 @@ namespace LetsLeap.Meta.UI
             Leap = Statistics.Instance.Leap;
             Multiply = Statistics.Instance.Multiply;
             Stage = Statistics.Instance.Stage;
+
+            var unlockedSkinsAmount = 0f;
+            for (var i = 1; i < _skinsConfig.SkinData.Count; i++)
+            {
+                if (_skinsConfig.SkinData[i].IsUnlocked)
+                {
+                    unlockedSkinsAmount++;
+                }
+            }
+            
+            var skinProgressPercent = unlockedSkinsAmount / _skinsConfig.SkinData.Count;
+            Statistics.Instance.SkinProgress = Mathf.RoundToInt(skinProgressPercent * 100);
             SkinProgress = Statistics.Instance.SkinProgress;
         }
 

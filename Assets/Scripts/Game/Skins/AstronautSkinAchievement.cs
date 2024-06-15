@@ -3,9 +3,8 @@ namespace LetsLeap.Game.Skins
     public sealed class AstronautSkinAchievement : SkinAchievement
     {
         private const int LeapHeightToUnlock = 25;
-        private const int SkinIndex = 1;
-        
-        public AstronautSkinAchievement(SkinsConfig skinsConfig) : base(skinsConfig)
+
+        public AstronautSkinAchievement(SkinsConfig skinsConfig, int skinIndex) : base(skinsConfig, skinIndex)
         {
         }
 
@@ -22,6 +21,12 @@ namespace LetsLeap.Game.Skins
             {
                 _skinsConfig.SkinData[SkinIndex].IsUnlocked = true;
             }
+        }
+
+        public override string GetDescription()
+        {
+            return _skinsConfig.SkinData[SkinIndex].Description.
+                Replace("X", Statistics.Instance.Leap.ToString());
         }
     }
 }

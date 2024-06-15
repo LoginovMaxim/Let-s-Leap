@@ -122,7 +122,7 @@ namespace LetsLeap.Meta.UI
             }
             
             _focusedSkinNameText.text = _skinsConfig.SkinData[focusedIndex - 1].Name;
-            _focusedSkinDescriptionText.text = _skinsConfig.SkinData[focusedIndex - 1].Description;
+            _focusedSkinDescriptionText.text = SkinsAchievementManager.Instance.GetSkinDescriptionByIndex(focusedIndex - 1);
         }
 
         private void UpdatePosition()

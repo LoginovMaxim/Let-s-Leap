@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Gameplay
 {
-    public sealed class WaveManager : MonoBehaviour
+    public sealed class WaveManager : MonoSingleton<WaveManager>
     {
         [SerializeField] private List<WaveData> _wavesData;
         
@@ -17,6 +17,8 @@ namespace Gameplay
         
         private float _waveChangeTime;
         private int _currentWaveNumber;
+
+        public int CurrentWaveNumber => _currentWaveNumber;
 
         public int DebugWave;
         

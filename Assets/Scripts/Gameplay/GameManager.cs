@@ -31,6 +31,14 @@ namespace Gameplay
             {
                 Statistics.Instance.Multiply = ScoreCounter.Instance.ScoreMultiplier;
             }
+
+            if (WaveManager.Instance.CurrentWaveNumber + 1 > Statistics.Instance.Stage)
+            {
+                Statistics.Instance.Stage = WaveManager.Instance.CurrentWaveNumber + 1;
+            }
+
+            Statistics.Instance.AppliedAbilitiesAmount += ScoreCounter.Instance.AppliedAbilitiesAmount;
+            Statistics.Instance.DestroyedCometsAmount += ScoreCounter.Instance.DestroyedCometsAmount;
         }
     }
 }
