@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1442109839080226635}
   - component: {fileID: 1577609769462221868}
-  - component: {fileID: 93735317441689091}
+  - component: {fileID: 8917229243285861924}
   - component: {fileID: -1427317666485748825}
-  - component: {fileID: -1000341439009937353}
-  m_Layer: 6
-  m_Name: PulseAbility
+  - component: {fileID: -2762168400831453897}
+  m_Layer: 11
+  m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1419523723, guid: 9e1cc725056d46a4185a3bcf42126f21, type: 3}
+  m_Sprite: {fileID: -1948036636, guid: 9e1cc725056d46a4185a3bcf42126f21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -87,8 +87,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &93735317441689091
-CircleCollider2D:
+--- !u!60 &8917229243285861924
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -116,12 +116,25 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.33
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.28, y: 0.46}
+    newSize: {x: 0.65, y: 0.65}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.23}
+      - {x: 0.13, y: -0.23}
+      - {x: -0.13, y: -0.23}
+  m_UseDelaunayMesh: 0
 --- !u!50 &-1427317666485748825
 Rigidbody2D:
   serializedVersion: 4
@@ -149,7 +162,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-1000341439009937353
+--- !u!114 &-2762168400831453897
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,7 +171,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7083961484091181371}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccf42cdf83f4458680c092f42a67071d, type: 3}
+  m_Script: {fileID: 11500000, guid: c8bc7f5ba7df4fe38a5afbf08c10a590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pulse: {fileID: 8667199315192067516, guid: 0186d55ccabd1da4fbf8d7895635bebd, type: 3}
+  _rigidbody: {fileID: -1427317666485748825}
+  _points: 0

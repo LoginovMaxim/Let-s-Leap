@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Gameplay
 {
-    public sealed class StarAbility : Ability
+    public sealed class StarAbility : DurationAbility
     {
         [SerializeField] private GameObject _playerStarView;
         

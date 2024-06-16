@@ -1,6 +1,6 @@
 namespace Gameplay
 {
-    public sealed class GhostAbility : Ability
+    public sealed class GhostAbility : DurationAbility
     {
         protected override void ApplyAbility(Player player)
         {
