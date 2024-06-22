@@ -17,6 +17,13 @@ namespace Gameplay
                     null);
 
                 explosionEffect.transform.localScale = _comet.transform.localScale;
+                
+                ScoreCounter.Instance.AddScore(_comet.Points);
+                ScoreCounter.Instance.OnCometDestroyed();
+                
+                player.Leap();
+                player.PlayLeapSound();
+                
                 return;
             }
             

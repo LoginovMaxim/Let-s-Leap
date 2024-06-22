@@ -1,29 +1,21 @@
-using UnityEngine;
-
 namespace Gameplay
 {
     public sealed class StarAbility : DurationAbility
     {
-        [SerializeField] private GameObject _playerStarView;
-        
+        protected override string AbilityName => "неуязвимый";
+
         protected override void ApplyAbility(Player player)
         {
             if (player.gameObject.TryGetComponent<StarEffect>(out var playerStar))
             {
-                playerStar.ApplyStarAbility(player, _duration);
+                playerStar.ApplyStarAbility(_duration, () => player.SwitchStarViewVisible(false));
+                player.SwitchStarViewVisible(true);
                 return;
             }
 
             playerStar = player.gameObject.AddComponent<StarEffect>();
-            
-            var playerTransform = player.transform;
-            _playerStarView = Instantiate(_playerStarView, 
-                playerTransform.position, 
-                playerTransform.rotation, 
-                playerTransform);
-            
-            playerStar.ApplyStarAbility(player, _duration);
-            playerStar.SetAbilityView(_playerStarView);
+            playerStar.ApplyStarAbility(_duration, () => player.SwitchStarViewVisible(false));
+            player.SwitchStarViewVisible(true);
         }
     }
 }

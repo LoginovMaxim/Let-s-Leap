@@ -1,3 +1,4 @@
+using LetsLeap.Game.Audio;
 using UnityEngine;
 
 namespace Gameplay
@@ -18,14 +19,30 @@ namespace Gameplay
         
         public void AddScore(int score)
         {
-            _score += score * _scoreMultiplier;
+            var resultScore = score * _scoreMultiplier;
+            _score += resultScore;
             Hud.Instance.SetPointsAmount(_score);
+
+            var playerPosition = GameManager.Instance.Player.transform.position;
+            var scoreHitDisplay = PoolService.Instance.Spawn<DisplayTextCanvas>(playerPosition, Quaternion.identity, null);
+            scoreHitDisplay.SetText($"+{resultScore}");
         }
 
         public void IncreaseScoreMultiplier()
         {
             _scoreMultiplier++;
             _star.SetMultiplierValue(_scoreMultiplier);
+
+            if (ScoreMultiplier <= 1)
+            {
+                return;
+            }
+            
+            AudioManager.Instance.PlayCrossLineSound();
+
+            var playerPosition = GameManager.Instance.Player.transform.position + 0.25f * Vector3.up;
+            var scoreHitDisplay = PoolService.Instance.Spawn<DisplayTextCanvas>(playerPosition, Quaternion.identity, null);
+            scoreHitDisplay.SetText($"множитель х{ScoreMultiplier}");
         }
 
         public void ResetScore()

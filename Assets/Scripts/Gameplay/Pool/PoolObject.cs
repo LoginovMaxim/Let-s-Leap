@@ -9,9 +9,9 @@ namespace Gameplay
             get
             {
                 var poolObjectId = gameObject.name;
-                if (poolObjectId.Contains(' '))
+                if (poolObjectId.Contains("(Clone)"))
                 {
-                    poolObjectId = poolObjectId.Split(' ')[0];
+                    poolObjectId = poolObjectId.Replace("(Clone)", "");
                 }
 
                 return poolObjectId;

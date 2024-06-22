@@ -34,6 +34,9 @@ namespace Gameplay
         [Header("Leap")]
         [SerializeField] private float _leapForce;
         
+        [Header("Ability Views")]
+        [SerializeField] private GameObject _starView;
+        
         private Rigidbody2D _rigidbody;
         private LayerMask _whiteMask;
 
@@ -83,6 +86,11 @@ namespace Gameplay
         public void SetAlpha(float alpha)
         {
             _skinRenderer.DOFade(alpha, 0.2f);
+        }
+
+        public void SwitchStarViewVisible(bool isVisible)
+        {
+            _starView.SetActive(isVisible);
         }
 
         private void UpdateAttractionForce()
@@ -170,7 +178,6 @@ namespace Gameplay
             if (other.gameObject.layer == 9)
             {
                 ScoreCounter.Instance.IncreaseScoreMultiplier();
-                AudioManager.Instance.PlayCrossLineSound();
             }
             
             if (other.gameObject.layer != 6)
@@ -214,6 +221,13 @@ namespace Gameplay
         public void PlayLeapSound()
         {
             AudioManager.Instance.PlayLeapSound(_leapPitch);
+        }
+
+        public void Leap()
+        {
+            _leapDelta = 0;
+            _targetLeapRotation = _leapUpRotation;
+            _positiveLeapsCount++;
         }
     }
 }

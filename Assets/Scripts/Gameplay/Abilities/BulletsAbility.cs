@@ -7,6 +7,7 @@ namespace Gameplay
         [SerializeField] private Bullet _bulletPrefab;
         [SerializeField] private int _bulletsAmount;
         [SerializeField] private float _bulletsSpeed;
+        protected override string AbilityName => "выстрел";
         
         protected override void ApplyAbility(Player player)
         {

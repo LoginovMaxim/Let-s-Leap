@@ -6,6 +6,7 @@ namespace Gameplay
     public abstract class Ability : PoolObject
     {
         protected const int AbilityLifetime = 36;
+        protected abstract string AbilityName { get; }
         
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -17,6 +18,10 @@ namespace Gameplay
             ApplyAbility(other.gameObject.GetComponent<Player>());
             ScoreCounter.Instance.OnAbilityApplied();
             AudioManager.Instance.PlayApplyAbilitySound();
+
+            var playerPosition = GameManager.Instance.Player.transform.position + Vector3.down;
+            var scoreHitDisplay = PoolService.Instance.Spawn<DisplayTextCanvas>(playerPosition, Quaternion.identity, null);
+            scoreHitDisplay.SetText(AbilityName);
         }
 
         protected abstract void ApplyAbility(Player player);

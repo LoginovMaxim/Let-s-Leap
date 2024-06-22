@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -13,6 +12,7 @@ namespace Gameplay
         [SerializeField] private Vector2Int _spawnCountRange;
         
         private float _spawnTime;
+        private float _decreasedSpawnTime;
 
         private void Start()
         {
@@ -29,6 +29,11 @@ namespace Gameplay
             Spawn();
             
             _spawnTime = Time.time + GetSpawnPeriod();
+        }
+
+        public void OnNextWaveStarted()
+        {
+            _decreasedSpawnTime += 0.5f;
         }
         
         private void Spawn()
@@ -53,7 +58,7 @@ namespace Gameplay
 
         private float GetSpawnPeriod()
         {
-            return Random.Range(_spawnPeriodRange.x, _spawnPeriodRange.y);
+            return Random.Range(_spawnPeriodRange.x, _spawnPeriodRange.y) - _decreasedSpawnTime;
         }
     }
 }

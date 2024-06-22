@@ -7,6 +7,7 @@ namespace Gameplay
 {
     public sealed class WaveManager : MonoSingleton<WaveManager>
     {
+        [SerializeField] private AbilitiesSpawner _abilitiesSpawner;
         [SerializeField] private List<WaveData> _wavesData;
         
         [Header("Configs")]
@@ -81,8 +82,14 @@ namespace Gameplay
                 Statistics.Instance.Stage = _currentWaveNumber;
             }
             
+            _abilitiesSpawner.OnNextWaveStarted();
+            
             Hud.Instance.SplashWave();
             AudioManager.Instance.PlayNextStageSound();
+
+            var playerPosition = GameManager.Instance.Player.transform.position + 0.25f * Vector3.down;
+            var scoreHitDisplay = PoolService.Instance.Spawn<DisplayTextCanvas>(playerPosition, Quaternion.identity, null);
+            scoreHitDisplay.SetText("новый уровень");
         }
 
         private void UpdateNextWaveTime()

@@ -1,11 +1,11 @@
+using System;
 using UnityEngine;
 
 namespace Gameplay
 {
     public abstract class AbilityEffect : MonoBehaviour
     {
-        protected Player _player;
-        private GameObject _abilityView;
+        private Action _disableAction;
         private float _timeToDisable;
         private bool _wasApplied;
 
@@ -24,9 +24,15 @@ namespace Gameplay
             DisableAbility();
         }
 
-        public virtual void ApplyStarAbility(Player player, float abilityDuration)
+        private void DisableAbility()
         {
-            _player = player;
+            _disableAction?.Invoke();
+            Destroy(this);
+        }
+
+        public void ApplyStarAbility(float abilityDuration, Action disableAction)
+        {
+            _disableAction = disableAction;
             
             if (_timeToDisable == 0)
             {
@@ -38,21 +44,6 @@ namespace Gameplay
             _timeToDisable += abilityDuration;
             
             _wasApplied = true;
-        }
-
-        public void SetAbilityView(GameObject abilityView)
-        {
-            _abilityView = abilityView;
-        }
-
-        protected virtual void DisableAbility()
-        {
-            if (_abilityView != null)
-            {
-                Destroy(_abilityView);
-            }
-            
-            Destroy(this);
         }
     }
 }

@@ -173,10 +173,10 @@ TextureImporter:
       name: GameAtlas-2_1
       rect:
         serializedVersion: 2
-        x: 258
-        y: 258
-        width: 251
-        height: 251
+        x: 256
+        y: 254
+        width: 250
+        height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,9 +194,9 @@ TextureImporter:
       name: GameAtlas-2_2
       rect:
         serializedVersion: 2
-        x: 13
-        y: 48
-        width: 200
+        x: 6
+        y: 51
+        width: 201
         height: 201
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -215,9 +215,9 @@ TextureImporter:
       name: GameAtlas-2_3
       rect:
         serializedVersion: 2
-        x: 219
-        y: 123
-        width: 91
+        x: 213
+        y: 125
+        width: 90
         height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -236,8 +236,8 @@ TextureImporter:
       name: GameAtlas-2_4
       rect:
         serializedVersion: 2
-        x: 322
-        y: 173
+        x: 315
+        y: 153
         width: 76
         height: 76
       alignment: 0
@@ -249,6 +249,69 @@ TextureImporter:
       bones: []
       spriteID: 3bcbcf946c2a1644cb93f474fc9d2581
       internalID: -1490749982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameAtlas-2_5
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 145
+        width: 101
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d89ca0e654839342b89f7d8682bf3e9
+      internalID: 1390982782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameAtlas-2_6
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 21
+        width: 149
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43020ef8a36431a4481accd196846847
+      internalID: 1192131571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameAtlas-2_7
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 39
+        width: 101
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b840265ad4f394c42b8a3f1cb6502a1b
+      internalID: -862012381
       vertices: []
       indices: 
       edges: []
@@ -269,6 +332,9 @@ TextureImporter:
       GameAtlas-2_2: -1806237993
       GameAtlas-2_3: -1785084582
       GameAtlas-2_4: -1490749982
+      GameAtlas-2_5: 1390982782
+      GameAtlas-2_6: 1192131571
+      GameAtlas-2_7: -862012381
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

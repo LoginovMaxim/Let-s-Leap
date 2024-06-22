@@ -5,6 +5,7 @@ namespace Gameplay
     public sealed class PulseAbility : Ability
     {
         [SerializeField] private Pulse _pulse;
+        protected override string AbilityName => "импульс";
         
         protected override void ApplyAbility(Player player)
         {
