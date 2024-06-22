@@ -4,6 +4,8 @@ namespace Gameplay
 {
     public abstract class Spawner : MonoBehaviour
     {
+        private const float MinSpawnDistanceToPlayer = 2f;
+        
         [Header("Spawner")]
         [SerializeField] protected PoolObject _prefab;
         [SerializeField] protected Vector2 _spawnCircleRange;
@@ -42,6 +44,11 @@ namespace Gameplay
         protected float GetScale()
         {
             return Random.Range(_scaleRange.x, _scaleRange.y);
+        }
+
+        protected bool CanSpawn(Vector3 position, float scale)
+        {
+            return Vector3.Distance(GameManager.Instance.Player.transform.position, position) > MinSpawnDistanceToPlayer + scale;
         }
 
         protected abstract void Spawn();

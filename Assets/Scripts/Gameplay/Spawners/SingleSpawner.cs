@@ -9,6 +9,7 @@ namespace Gameplay
         [SerializeField] private int _count;
         [SerializeField] private bool _isSameSpeed;
         [SerializeField] private bool _isSameOrbitSpeed;
+        [SerializeField] private bool _isEternal;
 
         private List<Comet> _gameplayPoolObjects = new List<Comet>();
         private bool _wasSpawned; 
@@ -42,7 +43,13 @@ namespace Gameplay
                 
                 position = Quaternion.AngleAxis(90, Vector3.forward) * position;
                 angle += angleStep;
-            
+
+                var scale = GetScale();
+                if (!CanSpawn(position, scale))
+                {
+                    continue;
+                }
+                
                 var comet = (Comet) PoolService.Instance.Spawn(
                     _prefab,
                     position, 
@@ -55,7 +62,7 @@ namespace Gameplay
                     _isSameSpeed ? commonSpeed : GetLinearSpeed(), 
                     _isSameOrbitSpeed ? commonOrbitSpeed : GetOrbitSpeed(), 
                     GetRotation(position), 
-                    GetScale());
+                    scale);
             }
 
             _wasSpawned = true;
@@ -68,6 +75,12 @@ namespace Gameplay
         public override void Pause()
         {
             base.Pause();
+
+            if (_isEternal)
+            {
+                _wasSpawned = false;
+                return;
+            }
 
             foreach (var circleComet in _gameplayPoolObjects)
             {

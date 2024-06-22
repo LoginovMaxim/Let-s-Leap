@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using LetsLeap.Game;
+using LetsLeap.Game.Audio;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -59,6 +60,11 @@ namespace LetsLeap.Meta.UI
             _targetHorizontalNormalizedPosition = step;
         }
 
+        public void OnCloseSkinsButtonPressed()
+        {
+            AudioManager.Instance.PlayUiClickSound();
+        }
+
         private void ApplySkin(Skin skin)
         {
             _currentSkin.SetSelectState(false);
@@ -89,6 +95,7 @@ namespace LetsLeap.Meta.UI
         {
             if (Input.GetMouseButtonUp(0))
             {
+                AudioManager.Instance.PlayScrollSkinsSound();
                 return;
             }
 

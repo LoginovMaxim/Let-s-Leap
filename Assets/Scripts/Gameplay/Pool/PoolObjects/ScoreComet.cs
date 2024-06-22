@@ -28,6 +28,7 @@ namespace Gameplay
             }
             
             ScoreCounter.Instance.AddScore(_points);
+            other.gameObject.GetComponent<Player>().PlayLeapSound();
             
             PoolService.Instance.Spawn<ExplosionEffect>(
                 transform.position, 

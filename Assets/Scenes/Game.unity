@@ -260,6 +260,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 982820102}
+  - {fileID: 1550165832}
   - {fileID: 632360632}
   - {fileID: 1536266669}
   - {fileID: 745354760}
@@ -612,6 +613,7 @@ MonoBehaviour:
   _count: 8
   _isSameSpeed: 0
   _isSameOrbitSpeed: 0
+  _isEternal: 0
 --- !u!4 &345863597 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6592777888250708494, guid: 13437134dcb718f4ea567d7f0462f114, type: 3}
@@ -1150,6 +1152,7 @@ MonoBehaviour:
   _count: 10
   _isSameSpeed: 0
   _isSameOrbitSpeed: 1
+  _isEternal: 0
 --- !u!1 &612394286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,7 +1386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: -999346418204058004, guid: 9eadebf01e25f9d44bfbfb1188a1028c, type: 3}
   _spawnCircleRange: {x: 10, y: 20}
-  _linearSpeedRange: {x: -5, y: -3}
+  _linearSpeedRange: {x: -4, y: -2}
   _orbitSpeedRange: {x: 0, y: 0}
   _scaleRange: {x: 0.8, y: 1.2}
   _spawnPeriodRange: {x: 3, y: 5}
@@ -1502,6 +1505,7 @@ MonoBehaviour:
   _count: 10
   _isSameSpeed: 0
   _isSameOrbitSpeed: 0
+  _isEternal: 0
 --- !u!1001 &780353715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1616,6 +1620,7 @@ MonoBehaviour:
   _count: 10
   _isSameSpeed: 0
   _isSameOrbitSpeed: 1
+  _isEternal: 0
 --- !u!4 &800110856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1442109839080226635, guid: f21d7c1101652a24ea3000c38917ff27, type: 3}
@@ -1826,6 +1831,7 @@ MonoBehaviour:
   _count: 12
   _isSameSpeed: 0
   _isSameOrbitSpeed: 1
+  _isEternal: 0
 --- !u!1 &977615234
 GameObject:
   m_ObjectHideFlags: 0
@@ -2351,6 +2357,7 @@ MonoBehaviour:
   _count: 6
   _isSameSpeed: 0
   _isSameOrbitSpeed: 0
+  _isEternal: 0
 --- !u!1 &1205368667
 GameObject:
   m_ObjectHideFlags: 0
@@ -2620,6 +2627,7 @@ MonoBehaviour:
   _count: 9
   _isSameSpeed: 0
   _isSameOrbitSpeed: 1
+  _isEternal: 0
 --- !u!1 &1308498801
 GameObject:
   m_ObjectHideFlags: 0
@@ -2707,6 +2715,7 @@ MonoBehaviour:
     - {fileID: 1853222396}
     - {fileID: 745354761}
     - {fileID: 632360633}
+    - {fileID: 1550165833}
   - BackgoundColor: {r: 0.54901963, g: 1, b: 0.101960786, a: 1}
     CameraBackgroundColor: {r: 0.09019608, g: 0.19607845, b: 0, a: 1}
     Spawners:
@@ -2752,7 +2761,7 @@ MonoBehaviour:
   _gameplayConfig: {fileID: 11400000, guid: a441271856c349742aefccd36a3d5207, type: 2}
   _background: {fileID: 1316341332}
   _camera: {fileID: 519420031}
-  DebugWave: 0
+  DebugWave: 6
 --- !u!1 &1316341331
 GameObject:
   m_ObjectHideFlags: 0
@@ -3191,6 +3200,7 @@ MonoBehaviour:
   _count: 12
   _isSameSpeed: 0
   _isSameOrbitSpeed: 1
+  _isEternal: 0
 --- !u!1 &1536266668
 GameObject:
   m_ObjectHideFlags: 0
@@ -3242,6 +3252,59 @@ MonoBehaviour:
   _scaleRange: {x: 0.8, y: 1.2}
   _spawnPeriodRange: {x: 2, y: 4}
   _spawnCountRange: {x: 1, y: 2}
+--- !u!1 &1550165831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1550165832}
+  - component: {fileID: 1550165833}
+  m_Layer: 0
+  m_Name: ScoreComet-1-StaticOrbit-Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1550165832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550165831}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 209898928}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1550165833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550165831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3670967346a9404b9cb1eddfd8ef178b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: -999346418204058004, guid: f21d7c1101652a24ea3000c38917ff27, type: 3}
+  _spawnCircleRange: {x: 6, y: 6}
+  _linearSpeedRange: {x: 0, y: 0}
+  _orbitSpeedRange: {x: 0, y: 0}
+  _scaleRange: {x: 1, y: 1}
+  _count: 50
+  _isSameSpeed: 0
+  _isSameOrbitSpeed: 0
+  _isEternal: 1
 --- !u!1001 &1567193556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4296,6 +4359,7 @@ MonoBehaviour:
   _count: 9
   _isSameSpeed: 0
   _isSameOrbitSpeed: 0
+  _isEternal: 0
 --- !u!1 &2114993652
 GameObject:
   m_ObjectHideFlags: 0

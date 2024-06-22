@@ -1,3 +1,4 @@
+using LetsLeap.Game.Audio;
 using UnityEngine;
 
 namespace Gameplay
@@ -15,6 +16,7 @@ namespace Gameplay
             
             ApplyAbility(other.gameObject.GetComponent<Player>());
             ScoreCounter.Instance.OnAbilityApplied();
+            AudioManager.Instance.PlayApplyAbilitySound();
         }
 
         protected abstract void ApplyAbility(Player player);

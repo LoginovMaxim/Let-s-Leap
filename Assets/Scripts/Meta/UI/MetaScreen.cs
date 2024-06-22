@@ -1,6 +1,6 @@
-using System;
 using Gameplay;
 using LetsLeap.Game;
+using LetsLeap.Game.Audio;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -116,6 +116,12 @@ namespace LetsLeap.Meta.UI
         public void OnPlayButtonPressed()
         {
             SceneManager.LoadScene("Game");
+            AudioManager.Instance.PlayUiClickSound();
+        }
+
+        public void OnSkinsButtonPressed()
+        {
+            AudioManager.Instance.PlayUiClickSound();
         }
 
         public void SetSkinIcon(Sprite sprite)

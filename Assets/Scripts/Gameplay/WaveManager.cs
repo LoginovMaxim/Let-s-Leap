@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using LetsLeap.Game;
+using LetsLeap.Game.Audio;
 using UnityEngine;
 
 namespace Gameplay
@@ -81,6 +82,7 @@ namespace Gameplay
             }
             
             Hud.Instance.SplashWave();
+            AudioManager.Instance.PlayNextStageSound();
         }
 
         private void UpdateNextWaveTime()

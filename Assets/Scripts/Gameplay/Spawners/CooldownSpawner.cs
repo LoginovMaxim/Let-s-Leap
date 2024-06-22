@@ -42,7 +42,13 @@ namespace Gameplay
                 var randomDirectionX = Random.Range(-1f, 1f);
                 var randomDirectionY = Random.Range(-1f, 1f);
                 var randomSpawnPosition = new Vector3(randomDirectionX, randomDirectionY, 0f).normalized * spawnDistance;
-            
+
+                var scale = GetScale();
+                if (!CanSpawn(randomSpawnPosition, scale))
+                {
+                    continue;
+                }
+                
                 var poolObject = (Comet) PoolService.Instance.Spawn(
                     _prefab,
                     randomSpawnPosition, 
@@ -53,7 +59,7 @@ namespace Gameplay
                     GetLinearSpeed(), 
                     GetOrbitSpeed(), 
                     GetRotation(randomSpawnPosition), 
-                    GetScale());
+                    scale);
             }
         }
 

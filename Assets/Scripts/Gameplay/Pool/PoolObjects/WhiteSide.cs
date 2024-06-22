@@ -22,6 +22,7 @@ namespace Gameplay
 
             explosionEffect.transform.localScale = _comet.transform.localScale;
             ScoreCounter.Instance.OnCometDestroyed();
+            player.PlayLeapSound();
         }
 
         protected override void OnBorderCollided()

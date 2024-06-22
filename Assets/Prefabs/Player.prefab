@@ -114,8 +114,8 @@ MonoBehaviour:
   _skinsConfig: {fileID: 11400000, guid: 44f99e39964a2ba4cb2d3f8848337353, type: 2}
   _skinRenderer: {fileID: 709210854178963194}
   _skinTransform: {fileID: 1574792697591269378}
-  _leapUpRotation: 30
-  _leapDownRotation: -30
+  _leapUpRotation: 20
+  _leapDownRotation: -20
   _speedLeapRotation: 7
   _sensitive: 10
   _stretchCurve:
@@ -123,7 +123,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0.0000008792849
-      value: 1.2
+      value: 1.05
       inSlope: 0.008190117
       outSlope: 0.008190117
       tangentMode: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
       outWeight: 0.10934365
     - serializedVersion: 3
       time: 1
-      value: 1.2
+      value: 1.05
       inSlope: -0.009752643
       outSlope: -0.009752643
       tangentMode: 0

@@ -1,4 +1,5 @@
 using LetsLeap.Game;
+using LetsLeap.Game.Audio;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,6 +17,7 @@ namespace Gameplay
             
             PlayerPrefs.SetInt(Constants.PrefsKeys.DeathCountKey, PlayerPrefs.GetInt(Constants.PrefsKeys.DeathCountKey) + 1);
             SkinsAchievementManager.Instance.OnPlayerDeath();
+            AudioManager.Instance.PlayGameOverSound();
             
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }

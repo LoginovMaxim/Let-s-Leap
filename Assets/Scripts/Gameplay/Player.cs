@@ -1,5 +1,6 @@
 using DG.Tweening;
 using LetsLeap.Game;
+using LetsLeap.Game.Audio;
 using UnityEngine;
 
 namespace Gameplay
@@ -7,6 +8,8 @@ namespace Gameplay
     [RequireComponent(typeof(Rigidbody2D))]
     public sealed class Player : MonoBehaviour
     {
+        private const float LeapPitchDelta = 0.1f;
+        
         [Header("Skin")] 
         [SerializeField] private SkinsConfig _skinsConfig;
         [SerializeField] private SpriteRenderer _skinRenderer;
@@ -41,6 +44,7 @@ namespace Gameplay
         private float _targetLeapRotation;
         private int _positiveLeapsCount;
         private bool _isTouching;
+        private float _leapPitch;
         
         public float MaxLeapHeight { get; private set; }
         
@@ -64,6 +68,8 @@ namespace Gameplay
         {
             _isTouching = Input.GetMouseButton(0);
             UpdateStretch();
+            UpdateLeapRotation();
+            CheckLeapHeight();
         }
 
         private void FixedUpdate()
@@ -72,8 +78,6 @@ namespace Gameplay
             UpdateLateralForce();
             UpdateTargetPosition();
             UpdateLookRotation();
-            UpdateLeapRotation();
-            CheckLeapHeight();
         }
 
         public void SetAlpha(float alpha)
@@ -96,6 +100,7 @@ namespace Gameplay
             {
                 _positiveLeapsCount = 0;
                 _targetLeapRotation = _leapDownRotation;
+                _leapPitch = 1f;
             }
             
             _attractionVector = Vector2.Lerp(_leapVector, attractionVector, Mathf.Clamp01(_leapDelta));
@@ -165,6 +170,7 @@ namespace Gameplay
             if (other.gameObject.layer == 9)
             {
                 ScoreCounter.Instance.IncreaseScoreMultiplier();
+                AudioManager.Instance.PlayCrossLineSound();
             }
             
             if (other.gameObject.layer != 6)
@@ -201,6 +207,13 @@ namespace Gameplay
             _leapDelta = 0;
             _targetLeapRotation = _leapUpRotation;
             _positiveLeapsCount++;
+
+            _leapPitch += LeapPitchDelta;
+        }
+
+        public void PlayLeapSound()
+        {
+            AudioManager.Instance.PlayLeapSound(_leapPitch);
         }
     }
 }
