@@ -44,6 +44,11 @@ namespace Gameplay
 
         private void Update()
         {
+            if (GameManager.Instance.IsGamePaused)
+            {
+                return;
+            }
+            
             if (_currentWaveNumber == _wavesData.Count - 1)
             {
                 return;

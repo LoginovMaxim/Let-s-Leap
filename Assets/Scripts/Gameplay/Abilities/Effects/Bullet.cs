@@ -1,4 +1,6 @@
+using System;
 using Gameplay.Vfx;
+using LetsLeap.Game.Audio;
 using UnityEngine;
 
 namespace Gameplay
@@ -7,12 +9,6 @@ namespace Gameplay
     {
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.layer == 8)
-            {
-                PoolService.Instance.Despawn(this);
-                return;
-            }
-            
             if (!TryGetCometTransform(other.gameObject, out var comet))
             {
                 return;
@@ -20,6 +16,7 @@ namespace Gameplay
             
             PoolService.Instance.Despawn(comet);
             PoolService.Instance.Despawn(this);
+            AudioManager.Instance.PlayDestroyCometSound();
             
             var explosionEffect = PoolService.Instance.Spawn<ExplosionEffect>(
                 transform.position, 
@@ -27,6 +24,16 @@ namespace Gameplay
                 null);
 
             explosionEffect.transform.localScale = comet.transform.localScale;
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.layer != 8)
+            {
+                return;
+            }
+            
+            PoolService.Instance.Despawn(this);
         }
 
         private bool TryGetCometTransform(GameObject gameObject, out Comet comet)

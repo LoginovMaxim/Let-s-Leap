@@ -1,4 +1,5 @@
 ﻿using Gameplay.Vfx;
+using LetsLeap.Game.Audio;
 using UnityEngine;
 
 namespace Gameplay
@@ -21,8 +22,8 @@ namespace Gameplay
                 ScoreCounter.Instance.AddScore(_comet.Points);
                 ScoreCounter.Instance.OnCometDestroyed();
                 
-                player.Leap();
-                player.PlayLeapSound();
+                //player.Leap();
+                AudioManager.Instance.PlayDestroyCometSound();
                 
                 return;
             }

@@ -154,7 +154,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _attractionForce: 1
   _lateralSensitive: 10
-  _lateralForce: 1
+  _lateralForce: 0.8
   _leapForce: 1.5
   _starView: {fileID: 8105690322664443788}
 --- !u!1 &5237018250635742436

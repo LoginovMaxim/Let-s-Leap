@@ -1,6 +1,7 @@
 using Gameplay;
 using LetsLeap.Game;
 using LetsLeap.Game.Audio;
+using LetsLeap.Game.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -108,7 +109,7 @@ namespace LetsLeap.Meta.UI
                 }
             }
             
-            var skinProgressPercent = unlockedSkinsAmount / _skinsConfig.SkinData.Count;
+            var skinProgressPercent = unlockedSkinsAmount / (_skinsConfig.SkinData.Count - 1);
             Statistics.Instance.SkinProgress = Mathf.RoundToInt(skinProgressPercent * 100);
             SkinProgress = Statistics.Instance.SkinProgress;
         }
@@ -121,6 +122,12 @@ namespace LetsLeap.Meta.UI
 
         public void OnSkinsButtonPressed()
         {
+            AudioManager.Instance.PlayUiClickSound();
+        }
+
+        public void OnSettingsButtonPressed()
+        {
+            Settings.Instance.gameObject.SetActive(true);
             AudioManager.Instance.PlayUiClickSound();
         }
 

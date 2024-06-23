@@ -18,6 +18,14 @@ namespace Gameplay
             {
                 return;
             }
+
+            var player = other.transform.gameObject.GetComponent<Player>();
+            if (player.gameObject.GetComponent<StarEffect>())
+            {
+                player.Leap();
+                player.PlayLeapSound();
+                return;
+            }
             
             GameManager.Instance.GameOver();
         }

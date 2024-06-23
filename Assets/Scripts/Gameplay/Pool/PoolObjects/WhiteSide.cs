@@ -1,4 +1,5 @@
 ﻿using Gameplay.Vfx;
+using LetsLeap.Game.Audio;
 using UnityEngine;
 
 namespace Gameplay
@@ -22,6 +23,7 @@ namespace Gameplay
 
             explosionEffect.transform.localScale = _comet.transform.localScale;
             ScoreCounter.Instance.OnCometDestroyed();
+            AudioManager.Instance.PlayDestroyCometSound();
             player.PlayLeapSound();
         }
 
